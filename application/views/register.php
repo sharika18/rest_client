@@ -1,5 +1,5 @@
 <?php
-    include "Master/Values/ListofValue.php";  
+    include "Values/ListofValue.php";  
 ?>
 
 <!DOCTYPE html>
@@ -53,10 +53,10 @@
             <label></label>
             <div class="input-group">
               <div class="input-group-append">
-                <span class="input-group-text">Formulir</span>
+                <span class="input-group-text">Jenjang</span>
               </div>
               <select class="custom-select" id="selectJenjang" name="selectJenjang">
-                <option value="0">Pilih Jenjang</option>
+                <option value="0">Pilih jenjang untuk bisa memasukkan data registrasi</option>
                 <?php
                   foreach($jenjangList as $listJenjang)
                   {
@@ -329,8 +329,9 @@
                         </div>  
                       </div>
                     </form>
-                      <!-- input states -->
+                   
                     <button class="btn btn-primary float-right" onclick="stepper.next()">Next</button>
+                    <br>
                   </div>
                   <div id="biodata-ayah" class="content" role="tabpanel" aria-labelledby="biodata-ayah-trigger">
                     <form id="formBiodataAyah">
