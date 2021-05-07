@@ -1,3 +1,20 @@
+<script src="<?php echo base_url();?>Script/RegisterScript.js"></script>
+<!-- InputMask -->
+<script src="<?php echo base_url();?>assets/AdminLTE/plugins/moment/moment.min.js"></script>
+<script src="<?php echo base_url();?>assets/AdminLTE/plugins/inputmask/jquery.inputmask.min.js"></script>
+<!-- bootstrap color picker -->
+<script src="<?php echo base_url();?>assets/AdminLTE/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="<?php echo base_url();?>assets/AdminLTE/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- BS-Stepper -->
+<script src="<?php echo base_url();?>assets/AdminLTE/plugins/bs-stepper/js/bs-stepper.min.js"></script>
+<!-- dropzonejs -->
+<script src="<?php echo base_url();?>assets/AdminLTE/plugins/dropzone/min/dropzone.min.js"></script>
+
+<!-- Bootstrap4 Duallistbox -->
+<script src="<?php echo base_url();?>assets/AdminLTE/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- Select2 -->
+<script src="<?php echo base_url();?>assets/AdminLTE/plugins/select2/js/select2.full.min.js"></script>
 <!-- jQuery -->
 <script src="<?php echo base_url();?>assets/AdminLTE/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
