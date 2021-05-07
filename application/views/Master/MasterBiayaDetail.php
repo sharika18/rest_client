@@ -63,7 +63,7 @@
                           // $value = $biaya[$i]['Deskripsi']." - ".$biaya[$i]['Jenjang'];
                           $value = $biaya[$i]['Deskripsi'];
                           $selected = "";
-                          if($value == "")
+                          if($biaya_id == $biaya[$i]['Biaya_ID'])
                           {
                             $selected = 'selected = "selected"';
                           }
@@ -106,7 +106,7 @@
                     foreach($gelombangList as $listGelombang)
                     {
                       $selected = "";
-                      if($geombang == $listGelombang)
+                      if($gelombang == $listGelombang)
                       {
                         $selected = 'selected = "selected"';
                       }
@@ -124,7 +124,8 @@
                     <div class="form-group">
                       <label>Nominal :</label>
                       <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="txtNominal" name="txtNominal" placeholder="Isi nominal biaya...">
+                        <input type="text" class="form-control" id="txtNominal" name="txtNominal" placeholder="Isi nominal biaya..."
+                        value="<?=$nominal?>">
                         <div class="input-group-append" >
                           <span class="input-group-text">.00</span>
                         </div>
@@ -134,7 +135,7 @@
                     <div class="form-group">
                       <label>Start Date :</label>
                       <div class="input-group date" data-target-input="nearest" id="divStartDate">
-                          <input type="text" class="form-control datetimepicker-input" data-target="#txtStartDate" id="txtStartDate" name="txtStartDate"/>
+                          <input type="text" class="form-control datetimepicker-input" data-target="#txtStartDate" id="txtStartDate" name="txtStartDate" value="<?=$startdate?>"/>
                           <div class="input-group-append" data-target="#txtStartDate" data-toggle="datetimepicker">
                               <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                           </div>
@@ -144,7 +145,7 @@
                     <div class="form-group">
                       <label>End Date :</label>
                       <div class="input-group date" data-target-input="nearest" id="divEndDate">
-                          <input type="text" class="form-control datetimepicker-input" data-target="#txtEndDate" id="txtEndDate" name="txtEndDate"/>
+                          <input type="text" class="form-control datetimepicker-input" data-target="#txtEndDate" id="txtEndDate" name="txtEndDate" value="<?=$enddate?>"/>
                           <div class="input-group-append" data-target="#txtEndDate" data-toggle="datetimepicker">
                               <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                           </div>
@@ -155,7 +156,7 @@
                                   
                   <div class="form-group">
                     <label>Ketentuan :</label>
-                    <textarea type="text" class="form-control" id="txtKetentuan" name="txtKetentuan" rows="3" placeholder="Ketentuan" value="<?=$Ketentuan?>"></textarea>
+                    <textarea type="text" class="form-control" id="txtKetentuan" name="txtKetentuan" rows="3" placeholder="Ketentuan"><?=$ketentuan?><?=$startdate?></textarea>
                   </div>
 
                 </div>
@@ -209,7 +210,7 @@
                         <td><?=$biayaDetail[$i]['StartDate'];?></td>
                         <td><?=$biayaDetail[$i]['EndDate'];?></td>
                         <td>
-                        <a href="<?php echo base_url()?>Biaya/GetID/<?php echo$biayaDetail[$i]['Biaya_Detail_ID']; ?>?modul=masterBiaya&act=Edit" class="nav-link">Edit</a>
+                        <a href="<?php echo base_url()?>BiayaDetail/GetID/<?php echo$biayaDetail[$i]['Biaya_Detail_ID']; ?>?modul=masterBiayaDetail&act=Edit" class="nav-link">Edit</a>
                         <a href="<?php echo base_url()?>BiayaDetail/Hapus/<?php echo$biayaDetail[$i]['Biaya_Detail_ID']; ?>?modul=masterBiayaDetail&act=Hapus" class="nav-link"
                         onclick="return confirm('Yakin mau hapus data <?php echo strtoupper($biayaDetail[$i]['Deskripsi']); ?> - <?=$biayaDetail[$i]['Jenjang'];?>? ntar nyesel loh wkwkwk')">Delete</a>
                         </td>

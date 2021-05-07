@@ -12,13 +12,18 @@
     });
   });
 
-  //Date range picker
+  //Date picker
   $(function () {
+    var selectedDate=document.getElementById("txtStartDate").value;  
     $('#txtStartDate').datetimepicker({
-        format: 'YYYY-MM-DD'
+        format: 'YYYY-MM-DD',
+        date : selectedDate
     });
+
+    var selectedDate=document.getElementById("txtEndDate").value;
     $('#txtEndDate').datetimepicker({
-        format: 'YYYY-MM-DD'
+        format: 'YYYY-MM-DD',
+        date : selectedDate
     });
     $('#dateTanggalLahirSantri').datetimepicker({
         format: 'YYYY-MM-DD'
