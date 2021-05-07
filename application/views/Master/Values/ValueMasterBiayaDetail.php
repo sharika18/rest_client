@@ -1,19 +1,34 @@
 <?php
-    $Id   = "";
-    $deskripsi  = "";
+    $Id         = "";
+    $biaya_id   = "";
     $jenjang    = "";
+    $gelombang  = "";
+    $nominal    = "";
+    $ketentuan  = "";
+    $startdate  = "0000-00-00";
+    $enddate    = "";
     $CreatedBy  = "";
     $CreatedDate= "";
-    $Ketentuan  = "";
+
     $act = "";
 
     IF(($_GET['act']=='Edit'))
     {
-        $Id   = $editBiaya[0]['Biaya_ID'];
-        $deskripsi  = $editBiaya[0]['Deskripsi'];
-        $jenjang    = $editBiaya[0]['Jenjang'];
-        $CreatedBy  = $editBiaya[0]['CreatedBy'];
-        $CreatedDate= $editBiaya[0]['CreatedDate'];
+        $Id   = $editBiayaDetail[0]['Biaya_Detail_ID'];
+        $biaya_id  = $editBiayaDetail[0]['Biaya_ID'];
+        //ok
+        $jenjang    = $editBiayaDetail[0]['Jenjang'];
+        //ok
+        $gelombang    = $editBiayaDetail[0]['Gelombang']; 
+        $nominal    = $editBiayaDetail[0]['Nominal']; 
+        
+        $ketentuan  = $editBiayaDetail[0]['Ketentuan'];
+
+        $startdate  = $editBiayaDetail[0]['StartDate'];
+        $enddate  = $editBiayaDetail[0]['EndDate'];
+        
+        $CreatedBy  = $editBiayaDetail[0]['CreatedBy'];
+        $CreatedDate= $editBiayaDetail[0]['CreatedDate'];
     }
 
     IF(($_GET['act']=='Tambah'))
