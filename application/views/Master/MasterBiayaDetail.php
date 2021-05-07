@@ -186,8 +186,9 @@
                     <th>Ketentuan</th>
                     <th>StartDate</th>
                     <th>EndDateDate</th>
-                    <th>CreatedBy</th>
-                    <th>CreatedDate</th>
+                    <th>Aksi</th>
+                    <!-- <th>CreatedBy</th>
+                    <th>CreatedDate</th> -->
                   </tr>
                   </thead>
                   <tbody>
@@ -207,8 +208,13 @@
                         <td><?=$biayaDetail[$i]['Ketentuan'];?></td>
                         <td><?=$biayaDetail[$i]['StartDate'];?></td>
                         <td><?=$biayaDetail[$i]['EndDate'];?></td>
-                        <td><?=$biayaDetail[$i]['CreatedBy'];?></td>
-                        <td><?=$biayaDetail[$i]['CreatedDate'];?></td>
+                        <td>
+                        <a href="<?php echo base_url()?>Biaya/GetID/<?php echo$biayaDetail[$i]['Biaya_Detail_ID']; ?>?modul=masterBiaya&act=Edit" class="nav-link">Edit</a>
+                        <a href="<?php echo base_url()?>BiayaDetail/Hapus/<?php echo$biayaDetail[$i]['Biaya_Detail_ID']; ?>?modul=masterBiayaDetail&act=Hapus" class="nav-link"
+                        onclick="return confirm('Yakin mau hapus data <?php echo strtoupper($biayaDetail[$i]['Deskripsi']); ?> - <?=$biayaDetail[$i]['Jenjang'];?>? ntar nyesel loh wkwkwk')">Delete</a>
+                        </td>
+                        <!-- <td><?// =$biayaDetail[$i]['CreatedBy'];?></td>
+                        <td><?//=$biayaDetail[$i]['CreatedDate'];?></td> -->
                       </tr>
                     <?php
                       }
