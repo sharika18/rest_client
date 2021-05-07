@@ -231,13 +231,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="mahasiswa?modul=mahasiswa" class="nav-link">
+                <a href="<?php echo base_url()?>mahasiswa?modul=mahasiswa" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mahasiswa</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="mahasiswa?modul=mahasiswa" class="nav-link">
+                <a href="<?php echo base_url()?>register" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Registrasi</p>
                 </a>
