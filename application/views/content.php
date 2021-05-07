@@ -8,10 +8,7 @@
     elseif ($_GET['modul']=='masterBiayaDetail'){
         include "Master/MasterBiayaDetail.php"; 
     }
-    // elseif ($_GET['modul']=='mahasiswa'){
-    //     include "mahasiswa.php"; 
-    // }
-    // elseif ($_GET['modul']=='t_update'){
-    //     include "t_update.php"; 
-    // }
+    elseif ($_GET['modul']=='mahasiswa'){
+        include "mahasiswa.php"; 
+    }
 ?>
