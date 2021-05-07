@@ -1,5 +1,5 @@
 <?php
-    include "Master/Values/ListofValue.php";  
+    include "Values/ListofValue.php";  
 ?>
 
 <!DOCTYPE html>
