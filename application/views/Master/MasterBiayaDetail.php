@@ -186,8 +186,9 @@
                     <th>Ketentuan</th>
                     <th>StartDate</th>
                     <th>EndDateDate</th>
-                    <th>CreatedBy</th>
-                    <th>CreatedDate</th>
+                    <th>Aksi</th>
+                    <!-- <th>CreatedBy</th>
+                    <th>CreatedDate</th> -->
                   </tr>
                   </thead>
                   <tbody>
@@ -207,8 +208,9 @@
                         <td><?=$biayaDetail[$i]['Ketentuan'];?></td>
                         <td><?=$biayaDetail[$i]['StartDate'];?></td>
                         <td><?=$biayaDetail[$i]['EndDate'];?></td>
-                        <td><?=$biayaDetail[$i]['CreatedBy'];?></td>
-                        <td><?=$biayaDetail[$i]['CreatedDate'];?></td>
+                        <td></td>
+                        <!-- <td><?// =$biayaDetail[$i]['CreatedBy'];?></td>
+                        <td><?//=$biayaDetail[$i]['CreatedDate'];?></td> -->
                       </tr>
                     <?php
                       }
