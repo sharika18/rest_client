@@ -1,6 +1,6 @@
 <?php
-      include "Values/ValueMasterBiayaDetail.php"; 
-      include "Values/ListofValue.php";       
+      include dirname(__DIR__)."/Values/ValueMasterBiayaDetail.php"; 
+      include dirname(__DIR__)."/Values/ListofValue.php";       
 ?>
 <!DOCTYPE html>
 <html lang="en">
