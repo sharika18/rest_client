@@ -60,6 +60,9 @@
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary"><?php echo $_GET['act'] ?></button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-primary">
+                    Launch Primary Modal
+                  </button>
                 </div>
               </form>
             </div>
@@ -107,6 +110,9 @@
                         <a href="<?php echo base_url()?>Biaya/GetID/<?php echo$biaya[$i]['Biaya_ID']; ?>?modul=masterBiaya&act=Edit" class="nav-link">Edit</a>
                         <a href="<?php echo base_url()?>Biaya/Hapus/<?php echo$biaya[$i]['Biaya_ID']; ?>?modul=masterBiaya&act=Hapus" class="nav-link"
                         onclick="return confirm('Yakin mau hapus data <?php echo strtoupper($biaya[$i]['Deskripsi']); ?>? ntar nyesel loh wkwkwk')">Delete</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-primary">
+                    Launch Primary Modal
+                  </button>
                         </td>
                       </tr>
                     <?php
@@ -136,13 +142,36 @@
         <!-- /.row -->
       </div>
       <!-- /.container-fluid -->
+
+      <div class="modal fade" id="modal-primary">
+    <div class="modal-dialog">
+      <div class="modal-content bg-primary">
+        <div class="modal-header">
+          <h4 class="modal-title">Primary Modal</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>One fine body&hellip;</p>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+          <a href="<?php echo base_url()?>Biaya/Hapus/<?php echo$biaya[$i]['Biaya_ID']; ?>?modul=masterBiaya&act=Hapus" class="nav-link"
+                        onclick="return confirm('Yakin mau hapus data <?php echo strtoupper($biaya[$i]['Deskripsi']); ?>? ntar nyesel loh wkwkwk')">Delete
+          <button type="button" class="btn btn-outline-light">Save changes</button></a>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
     </section>
     <!-- /.content -->
   <!-- /.content-wrapper -->
 
 </div>
 <!-- ./wrapper -->
-
 </body>
 </html>
 

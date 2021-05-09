@@ -6,15 +6,9 @@ class Biaya extends CI_Controller{
   public function __construct()
   {
     include "construct.php";
+    include "Functions/MessageBoxFunction.php";
   }
   
-  function function_alert($msg)
-    {
-        echo "<script type='text/javascript'>alert('$msg', '', function(){
-            location.href = 'http://localhost/rest_client/biaya?modul=masterBiaya&act=Tambah';
-        });</script>";
-    }
-
   public function GetBiaya()
   {
     $get_apiManageBiaya = json_decode($this -> curl -> simple_get ($this->API.'/biaya/', array('AR-KEY'=>$this->key)),true);
@@ -75,10 +69,10 @@ class Biaya extends CI_Controller{
     $update = $this->curl->simple_put($this->API.'/biaya/', $data, array(CURLOPT_BUFFERSIZE => 10)); 
     if($update)
     {
-        $this->session->set_flashdata('hasil','Update Data Berhasil');
+        $this->session->set_flashdata('ReturnEditBiaya','Update Data Berhasil');
     }else
     {
-       $this->session->set_flashdata('hasil','Update Data Gagal');
+       $this->session->set_flashdata('ReturnEditBiaya','Update Data Gagal');
     }
     redirect('biaya?modul=masterBiaya&act=Tambah');
   }
@@ -120,54 +114,16 @@ class Biaya extends CI_Controller{
     }
     redirect('biaya?modul=masterBiaya&act=Tambah');
     }
-  
-    // function updateBiaya(){
-    //     $data = array(
-    //         # alt + Shift + bawah > untuk copy data ke baris bawah
-    //         # alt + bawah/atas > untuk memindahkan data baris atas ke bawah
-    //         # contoh harcode param...
-    //         # 'Deskripsi'     => "contoh harcode param", 
-    //         'AR-KEY'        => $this->key,
-    //         'id'            => $this->input-> post ('txtID'),
-    //         'Deskripsi'     => $this->input-> post ('txtDeskripsi'),
-    //         'Jenjang'       => $this->input-> post ('txtJenjang'),
-    //         'CreatedBy'     => $this->input-> post ('CreatedBy'),
-    //         'CreatedDate'   => $this->input-> post ('CreatedDate'),
-    //         'ModifiedBy'    => $this->input-> post ('ModifiedBy'),
-    //         'ModifiedDate'  => $this->input-> post ('ModifiedDate')
-    //     );
-    //     print_r($data);
-    //     $update = $this->curl->simple_put($this->API.'/biaya/', $data, array(CURLOPT_BUFFERSIZE => 10)); 
-    //     if($update)
-    //     {
-    //         $this->session->set_flashdata('hasil','Update Data Berhasil');
-    //     }else
-    //     {
-    //        $this->session->set_flashdata('hasil','Update Data Gagal');
-    //     }
-    //     redirect('biaya?modul=masterBiaya');
-    // }
-
-    // function GetID($Biaya_ID = '')
-    // {
-    //     $get_apiEditBiaya = json_decode($this -> curl -> simple_get 
-    // ($this->API.'/biaya/', array('AR-KEY'=>$this->key, 'id'=>$Biaya_ID) ),true);
-    //     $data['editBiaya'] = $get_apiEditBiaya['data'];
-    //     // print_r($data);
-    //     $data['biaya'] = $this->GetBiaya();
-    //     $data['biayaDetail'] = $this->GetBiayaDetail();
-    //     $this->load->view('media', $data);
-    // }
 
     function Hapus($Biaya_ID)
     {
         $alertMessage = "Data tidak terhapus";
-        $delete =  $this->curl->simple_delete
-        ($this->API.'/biaya/', array('AR-KEY'=>$this->key, 'id'=>$Biaya_ID));
+        $delete =  $this->curl->simple_delete       
+                    ($this->API.'/biaya/', array('AR-KEY'=>$this->key, 'id'=>$Biaya_ID));
           
         if(!$delete)
         {
-            $this-> function_alert($alertMessage);
+            MessageBoxDelete($alertMessage);
         }
         else
         {
