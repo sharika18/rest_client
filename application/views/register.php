@@ -281,14 +281,22 @@
                                   <div class="input-group-append">
                                     <span class="input-group-text">Baju</span>
                                   </div>
-                                  <select class="custom-select">
-                                    <option>--Pilih Ukuran Baju--</option>
-                                    <option>XS</option>
-                                    <option>S</option>
-                                    <option>M</option>
-                                    <option>L</option>
-                                    <option>XL</option>
-                                    <option>XXL</option>
+                                  <select class="custom-select" id="selectUkuranBaju" name="selectUkuranBaju">
+                                    <option value="0">--Pilih Ukuran Baju--</option>
+                                    <?php
+                                      foreach($ukuranBajuCelanaList as $listUkuranBajuCelana)
+                                      {
+                                        $selected = "";
+                                        if("" == $listUkuranBajuCelana)
+                                        {
+                                          $selected = 'selected = "selected"';
+                                        }
+                                        echo '
+                                        
+                                          <option value="'.$listUkuranBajuCelana. '"' .$selected. '>' .$listUkuranBajuCelana. '</option>
+                                        ';
+                                      }
+                                    ?>
                                   </select>
                                 </div>
                               </div>
@@ -297,14 +305,22 @@
                                   <div class="input-group-append">
                                     <span class="input-group-text">Celana</span>
                                   </div>
-                                  <select class="custom-select">
-                                    <option>--Pilih Ukuran Celana--</option>
-                                    <option>XS</option>
-                                    <option>S</option>
-                                    <option>M</option>
-                                    <option>L</option>
-                                    <option>XL</option>
-                                    <option>XXL</option>
+                                  <select class="custom-select" id="selectUkuranCelana" name="selectUkuranCelana">
+                                    <option value="0">--Pilih Ukuran Baju--</option>
+                                    <?php
+                                      foreach($ukuranBajuCelanaList as $listUkuranBajuCelana)
+                                      {
+                                        $selected = "";
+                                        if("" == $listUkuranBajuCelana)
+                                        {
+                                          $selected = 'selected = "selected"';
+                                        }
+                                        echo '
+                                        
+                                          <option value="'.$listUkuranBajuCelana. '"' .$selected. '>' .$listUkuranBajuCelana. '</option>
+                                        ';
+                                      }
+                                    ?>
                                   </select>
                                 </div>
                               </div>
@@ -313,14 +329,22 @@
                                   <div class="input-group-append">
                                     <span class="input-group-text">Jilbab</span>
                                   </div>
-                                  <select class="custom-select">
-                                    <option>--Pilih Ukuran Jilbab--</option>
-                                    <option>XS</option>
-                                    <option>S</option>
-                                    <option>M</option>
-                                    <option>L</option>
-                                    <option>XL</option>
-                                    <option>XXL</option>
+                                  <select class="custom-select" id="selectUkuranJilbab" name="selectUkuranJilbab">
+                                    <option value="0">--Pilih Ukuran Baju--</option>
+                                    <?php
+                                      foreach($ukuranJilbabList as $listUkuranJilbab)
+                                      {
+                                        $selected = "";
+                                        if("" == $listUkuranJilbab)
+                                        {
+                                          $selected = 'selected = "selected"';
+                                        }
+                                        echo '
+                                        
+                                          <option value="'.$listUkuranJilbab. '"' .$selected. '>' .$listUkuranJilbab. '</option>
+                                        ';
+                                      }
+                                    ?>
                                   </select>
                                 </div>
                               </div>
