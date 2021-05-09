@@ -60,7 +60,6 @@ class Biaya extends CI_Controller{
         'AR-KEY'        => $this->key,
         'id'            => $this->input-> post ('txtID'),
         'Deskripsi'     => $this->input-> post ('txtDeskripsi'),
-        // 'Jenjang'       => $this->input-> post ('txtJenjang'),
         'CreatedBy'     => $this->input-> post ('CreatedBy'),
         'CreatedDate'   => $this->input-> post ('CreatedDate'),
         'ModifiedBy'    => "DEPRA",
