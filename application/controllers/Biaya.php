@@ -7,7 +7,14 @@ class Biaya extends CI_Controller{
   {
     include "construct.php";
   }
- 
+  
+  function function_alert($msg)
+    {
+        echo "<script type='text/javascript'>alert('$msg', '', function(){
+            location.href = 'http://localhost/rest_client/biaya?modul=masterBiaya&act=Tambah';
+        });</script>";
+    }
+
   public function GetBiaya()
   {
     $get_apiManageBiaya = json_decode($this -> curl -> simple_get ($this->API.'/biaya/', array('AR-KEY'=>$this->key)),true);
@@ -154,9 +161,18 @@ class Biaya extends CI_Controller{
 
     function Hapus($Biaya_ID)
     {
+        $alertMessage = "Data tidak terhapus";
         $delete =  $this->curl->simple_delete
         ($this->API.'/biaya/', array('AR-KEY'=>$this->key, 'id'=>$Biaya_ID));
-        redirect('biaya?modul=masterBiaya&act=Tambah');
+          
+        if(!$delete)
+        {
+            $this-> function_alert($alertMessage);
+        }
+        else
+        {
+            redirect('biaya?modul=masterBiaya&act=Tambah');
+        }
     }
 }
 
