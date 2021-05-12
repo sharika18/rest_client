@@ -7,6 +7,8 @@ include_once (dirname(__FILE__) . "/Biaya.php");
 
 class BiayaDetail extends Biaya
 {
+    public $success = "Data Berhasil";
+    public $error = "Data Gagal";
     public function __construct()
     {
         include "construct.php";
@@ -52,10 +54,10 @@ class BiayaDetail extends Biaya
     $insert = $this->curl->simple_post($this->API.'/biaya_detail/', $data, array(CURLOPT_BUFFERSIZE => 10)); 
     if($insert)
     {
-        $this->session->set_flashdata('hasil','Insert Data Berhasil');
+        $this->session->set_flashdata('success',$this->success.' Disimpan');
     }else
     {
-        $this->session->set_flashdata('hasil','Insert Data Gagal');
+        $this->session->set_flashdata('error',$this->error.' Disimpan');
     }
     redirect('biayadetail?modul=masterBiayaDetail&act=Tambah');
     }
@@ -96,6 +98,13 @@ class BiayaDetail extends Biaya
     {
         $delete =  $this->curl->simple_delete
         ($this->API.'/biaya_detail/', array('AR-KEY'=>$this->key, 'id'=>$Biaya_Detail_ID));
+        if($delete)
+        {
+            $this->session->set_flashdata('success',$this->success.' Dihapus');
+        }else
+        {
+            $this->session->set_flashdata('error',$this->error.' Dihapus');
+        }
         redirect('biayadetail?modul=masterBiayaDetail&act=Tambah');
     }
 }

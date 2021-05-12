@@ -44,7 +44,7 @@
               <!-- /.card-header -->
               <!-- form start -->
 
-              <form action="<?php echo base_url()?>biayadetail/<?php echo $act?>" method="post">
+              <form action="<?php echo base_url()?>biayadetail/<?php echo $act?>" method="post" id="formSubmit">
                 <div class="card-body">
                 
                 <input type="hidden" class="form-control" id="txtID" name="txtID" value="<?=$Id?>"/>
@@ -160,11 +160,14 @@
 
                 </div>
                 <!-- /.card-body -->
-
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary"><?php echo $_GET['act'] ?></button>
-                </div>
               </form>
+              <div class="card-footer">
+                <button type="submit" 
+                  class="btnSubmit btn btn-primary"
+                  data-toggle="modal" 
+                  data-target="#modalSubmit"
+                  ><?php echo $_GET['act'] ?></button>
+              </div>
             </div>
             <!-- /.card -->
             <div class="card">
@@ -186,8 +189,6 @@
                     <th>StartDate</th>
                     <th>EndDateDate</th>
                     <th>Aksi</th>
-                    <!-- <th>CreatedBy</th>
-                    <th>CreatedDate</th> -->
                   </tr>
                   </thead>
                   <tbody>

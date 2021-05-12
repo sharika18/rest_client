@@ -8,7 +8,6 @@ class Biaya extends CI_Controller{
   public function __construct()
   {
     include "construct.php";
-    include "Common/MessageBoxFunction.php";
   }
   
   public function GetBiaya()

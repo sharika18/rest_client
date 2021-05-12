@@ -3,11 +3,9 @@
         $(".btnSubmit").click(function () {
             var act = "<?php echo $_GET['act'] ?>";
             var actValue = act.toLowerCase();
-            var dataDeskripsi =  document.getElementById("txtDeskripsi").value;
             var message = "";
                 message +=
-                    "<p>Apakah kamu yakin ingin " +actValue+ " data berikut : <b>"
-                            + dataDeskripsi + "</b> ? </p>";
+                    "<p>Apakah kamu yakin ingin " +actValue+ " data tersebut?</p>";
 
             $("#modalSubmitContent").empty();
             $("#modalSubmitContent").append(message);
