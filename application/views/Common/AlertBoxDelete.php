@@ -1,29 +1,18 @@
 <script>
     $(function () {
-        var table = $("#dgMasterBiaya").DataTable();
-        //$('#dgMasterBiaya tbody').on( 'click', 'tr', function () {
-          //  $(this).toggleClass('selected');
-            //var pos = table.row(this).index();
-            //var row = table.row(pos).data()[0];
-            //alert(row);
-        //} );
-
-        $(".btnDelete").click(function () {
-            var pos = table.row(this).index();
-            var row = table.row(pos).data()[0];
-            alert(row);
-            var iddToBeDeleted = table.row($(this).parents("tr")).data()[0];
+        var table = $("<?php echo $idDataTable ?>").DataTable();
+        $('<?php echo $idDataTable ?>').on( 'click', '.btnDelete', function () {
+           $(this).toggleClass('selected');
+            var idToBeDeleted = table.row($(this).parents("tr")).data()[0];
             var dataDeskripsi =  $(this).parents("tr").find(".tdDeskripsi").text();
             var message = "";
                 message +=
                     "<p>Apakah kamu yakin ingin menghapus data berikut : <b>"
                             + dataDeskripsi+"</b> ? </p>";
-
             $("#modalContent").empty();
             $("#modalContent").append(message);
-
-            $("#id").val(iddToBeDeleted);
-        });
+            $("#id").val(idToBeDeleted);
+        } );
     });
 </script>
 <div class="modal fade" id="modalDelete">

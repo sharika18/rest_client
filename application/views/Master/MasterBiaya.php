@@ -114,7 +114,7 @@
                           <div class="btn-group">
                             <a  href="<?php echo base_url()?>Biaya/GetID/<?php echo$biaya[$i]['Biaya_ID']; ?>?modul=masterBiaya&act=Edit" 
                                 class="btnEdit btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
-                            <button class="btnDelete btn btn-danger btn-sm" 
+                            <button  id="biayaId" class="btnDelete btn btn-danger btn-sm" 
                                 data-toggle="modal" 
                                 data-target="#modalDelete"><i class="far fa-trash-alt"></i></button>
                           </div>

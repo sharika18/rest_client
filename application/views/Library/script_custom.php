@@ -3,10 +3,10 @@
   //DataTable
   $(function () {
     var masterBiayaTable = $("#dgMasterBiaya").DataTable({
-      destroy: true,
+      "destroy": true,
       "responsive": true,
       "autoWidth": false,
-      "paging": false,
+      "paging": true,
       "columnDefs": [
             {
                 "targets": [ 0],
