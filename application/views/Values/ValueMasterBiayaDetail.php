@@ -6,7 +6,7 @@
     $gelombang  = "";
     $nominal    = "";
     $ketentuan  = "";
-    $startdate  = "0000-00-00";
+    $startdate  = "";
     $enddate    = "";
     $CreatedBy  = "";
     $CreatedDate= "";
