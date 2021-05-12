@@ -35,7 +35,7 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <a  href=""
                     onclick="this.href=
-                            '<?php echo base_url()?>Biaya/HapusBiaya/'+document.getElementById('id').value+'?modul=masterBiaya&act=Hapus'"
+                            '<?=$deleteControllerPath?>'+document.getElementById('id').value+'<?=$deleteHrefParam?>'"
                     class="btn btn-primary">Delete</a>
             </div>
         </div>

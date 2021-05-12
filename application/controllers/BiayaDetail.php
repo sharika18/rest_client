@@ -36,10 +36,6 @@ class BiayaDetail extends Biaya
   {
     $now = date('Y-m-d H:i:s');
     $data = [
-        # alt + Shift + bawah > untuk copy data ke baris bawah
-        # alt + bawah/atas > untuk memindahkan data baris atas ke bawah
-        # contoh harcode param...
-        # 'Deskripsi'     => "contoh harcode param", 
         'Biaya_ID'     => $this->input-> post ('txtBiaya'),
         'Jenjang'       => $this->input-> post ('txtJenjang'),
         'Gelombang'       => $this->input-> post ('txtGelombang'),
@@ -53,16 +49,6 @@ class BiayaDetail extends Biaya
         'ModifiedDate'  => $now,
         'AR-KEY'        => $this->key,
     ];
-    # contoh ditulis dengan array...
-    // array(
-    //     'AR-KEY'        => $this->key,
-    //     'Deskripsi'     => $this->input-> post ('txtDeskripsi'),
-    //     'Jenjang'       => $this->input-> post ('txtJenjang'),
-    //     'CreatedBy'     => $this->input-> post ('CreatedBy'),
-    //     'CreatedDate'   => $this->input-> post ('CreatedDate'),
-    //     'ModifiedBy'    => $this->input-> post ('ModifiedBy'),
-    //     'ModifiedDate'  => $this->input-> post ('ModifiedDate')
-    // );
     $insert = $this->curl->simple_post($this->API.'/biaya_detail/', $data, array(CURLOPT_BUFFERSIZE => 10)); 
     if($insert)
     {
