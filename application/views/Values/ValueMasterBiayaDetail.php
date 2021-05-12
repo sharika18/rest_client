@@ -25,9 +25,9 @@
     {
         $Id   = $editBiayaDetail[0]['Biaya_Detail_ID'];
         $biaya_id  = $editBiayaDetail[0]['Biaya_ID'];
-        //ok
+        
         $jenjang    = $editBiayaDetail[0]['Jenjang'];
-        //ok
+        
         $gelombang    = $editBiayaDetail[0]['Gelombang']; 
         $nominal    = $editBiayaDetail[0]['Nominal']; 
         

@@ -70,6 +70,7 @@ class BiayaDetail extends Biaya
           # alt + bawah/atas > untuk memindahkan data baris atas ke bawah
           # contoh harcode param...
           # 'Deskripsi'     => "contoh harcode param", 
+          'id'            => $this->input-> post ('txtID'),
           'Biaya_ID'      => $this->input-> post ('txtBiaya'),
           'Jenjang'       => $this->input-> post ('txtJenjang'),
           'Gelombang'     => $this->input-> post ('txtGelombang'),

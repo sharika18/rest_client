@@ -48,8 +48,8 @@
                 <div class="card-body">
                 
                 <input type="hidden" class="form-control" id="txtID" name="txtID" value="<?=$Id?>"/>
-                <input type="hidden" class="form-control" id="txtID" name="CreatedBy" value="<?=$CreatedBy?>"/>
-                <input type="hidden" class="form-control" id="txtID" name="CreatedDate" value="<?=$CreatedDate?>"/>
+                <input type="hidden" class="form-control" id="CreatedBy" name="CreatedBy" value="<?=$CreatedBy?>"/>
+                <input type="hidden" class="form-control" id="CreatedDate" name="CreatedDate" value="<?=$CreatedDate?>"/>
                 <div class="row">
                 <div class="col-md-6">                                                    
                   <div class="form-group">
