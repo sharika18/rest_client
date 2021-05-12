@@ -53,7 +53,6 @@
                 <div class="row">
                 <div class="col-md-6">                                                    
                   <div class="form-group">
-                    
                       <label>Biaya :</label>
                       <select class="custom-select" id="txtBiaya" name="txtBiaya">
                       <option value="">Pilih Biaya</option>
@@ -67,13 +66,11 @@
                             $selected = 'selected = "selected"';
                           }
                           echo '
-                          
                             <option value="'.$biaya[$i]['Biaya_ID'].'" '.$selected.'>'.$value.'</option>
                           ';
                         }
                       ?>
                       </select>
-                    
                   </div>
 
                   <div class="form-group">
@@ -89,7 +86,6 @@
                         $selected = 'selected = "selected"';
                       }
                       echo '
-                      
                         <option value="'.$listJenjang. '"' .$selected. '>' .$listJenjang. '</option>
                       ';
                     }
@@ -110,7 +106,6 @@
                         $selected = 'selected = "selected"';
                       }
                       echo '
-                      
                         <option value="' .$listGelombang. '"' .$selected. '>' .$listGelombang. '</option>
                       ';
                     }
