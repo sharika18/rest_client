@@ -15,6 +15,7 @@
         } );
     });
 </script>
+
 <div class="modal fade" id="modalDelete">
     <div class="modal-dialog">
         <div class="modal-content bg-default">
@@ -34,7 +35,7 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <a  href=""
                     onclick="this.href=
-                            '<?php echo base_url()?>Biaya/Hapus/'+document.getElementById('id').value+'?modul=masterBiaya&act=Hapus'"
+                            '<?php echo base_url()?>Biaya/HapusBiaya/'+document.getElementById('id').value+'?modul=masterBiaya&act=Hapus'"
                     class="btn btn-primary">Delete</a>
             </div>
         </div>

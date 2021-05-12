@@ -1,4 +1,5 @@
 <?php
+    //FIELD
     $Id         = "";
     $biaya_id   = "";
     $jenjang    = "";
@@ -10,7 +11,13 @@
     $CreatedBy  = "";
     $CreatedDate= "";
 
+    //OTHERS
     $act = "";
+    IF($_GET['act'])
+    {
+        $act = $_GET['act'].'BiayaDetail';
+    }
+    $idDataTable ="#dgMasterBiayaDetail";
 
     IF(($_GET['act']=='Edit'))
     {
@@ -29,10 +36,5 @@
         
         $CreatedBy  = $editBiayaDetail[0]['CreatedBy'];
         $CreatedDate= $editBiayaDetail[0]['CreatedDate'];
-    }
-
-    IF(($_GET['act']=='Tambah'))
-    {
-        $act = $_GET['act'].'BiayaDetail';
     }
 ?>

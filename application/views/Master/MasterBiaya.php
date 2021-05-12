@@ -46,7 +46,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?php echo base_url()?>biaya/<?php echo $_GET['act'] ?>" method="post" id="formSubmit">
+              <form action="<?php echo base_url()?>biaya/<?php echo $act?>" method="post" id="formSubmit">
                 <div class="card-body">
                 
                 <input type="hidden" class="form-control" id="txtID" name="txtID" value="<?=$Id?>"/>

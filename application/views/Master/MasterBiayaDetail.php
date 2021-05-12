@@ -60,7 +60,6 @@
                       <?php
                         for ($i=0; $i< count($biaya); $i++)
                         {
-                          // $value = $biaya[$i]['Deskripsi']." - ".$biaya[$i]['Jenjang'];
                           $value = $biaya[$i]['Deskripsi'];
                           $selected = "";
                           if($biaya_id == $biaya[$i]['Biaya_ID'])

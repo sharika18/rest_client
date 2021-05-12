@@ -1,8 +1,15 @@
 <?php
+    //FIELD
     $Id   = "";
     $deskripsi  = "";
     $CreatedBy  = "";
     $CreatedDate= "";
+    //OTHERS
+    $act = "";
+    IF($_GET['act'])
+    {
+        $act = $_GET['act'].'Biaya';
+    }
     $idDataTable ="#dgMasterBiaya";
 
     IF(($_GET['act']=='Edit'))

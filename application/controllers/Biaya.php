@@ -49,14 +49,32 @@ class Biaya extends CI_Controller{
     $this->load->view('media', $data);
   }
   
-  function Edit()
+  function TambahBiaya()
+  { 
+    $now = date('Y-m-d H:i:s');
+    $data = [
+        'Deskripsi'     => $this->input-> post ('txtDeskripsi'),
+        'CreatedBy'     => "DEPRA", //$this->input-> post ('CreatedBy'),
+        'CreatedDate'   => $now,
+        'ModifiedBy'    => $this->input-> post ('ModifiedBy'), //belum diset
+        'ModifiedDate'  => $now,
+        'AR-KEY'        => $this->key,
+    ];
+    $insert = $this->curl->simple_post($this->API.'/biaya/', $data, array(CURLOPT_BUFFERSIZE => 10)); 
+    if($insert)
+    {
+        $this->session->set_flashdata('success',$this->success.' Disimpan');
+    }else
+    {
+        $this->session->set_flashdata('error',$this->error.' Disimpan');
+    }
+    redirect('biaya?modul=masterBiaya&act=Tambah');
+  }
+
+  function EditBiaya()
   {
     $now = date('Y-m-d H:i:s');
     $data = array(
-        # alt + Shift + bawah > untuk copy data ke baris bawah
-        # alt + bawah/atas > untuk memindahkan data baris atas ke bawah
-        # contoh harcode param...
-        # 'Deskripsi'     => "contoh harcode param", 
         'AR-KEY'        => $this->key,
         'id'            => $this->input-> post ('txtID'),
         'Deskripsi'     => $this->input-> post ('txtDeskripsi'),
@@ -76,43 +94,19 @@ class Biaya extends CI_Controller{
     redirect('biaya?modul=masterBiaya&act=Tambah');
   }
 
-  // insert data kontak
-  function Tambah()
+  function HapusBiaya($Biaya_ID)
   {
-    
-    $now = date('Y-m-d H:i:s');
-    $data = [
-        'Deskripsi'     => $this->input-> post ('txtDeskripsi'),
-        'CreatedBy'     => "DEPRA", //$this->input-> post ('CreatedBy'),
-        'CreatedDate'   => $now,
-        'ModifiedBy'    => $this->input-> post ('ModifiedBy'), //belum diset
-        'ModifiedDate'  => $now,
-        'AR-KEY'        => $this->key,
-    ];
-    $insert = $this->curl->simple_post($this->API.'/biaya/', $data, array(CURLOPT_BUFFERSIZE => 10)); 
-    if($insert)
-    {
-        $this->session->set_flashdata('success',$this->success.' Disimpan');
-    }else
-    {
-        $this->session->set_flashdata('error',$this->error.' Disimpan');
-    }
-    redirect('biaya?modul=masterBiaya&act=Tambah');
-    }
-
-    function Hapus($Biaya_ID)
-    {
-        $alertMessage = "Data tidak terhapus";
-        $delete =  $this->curl->simple_delete       
-                    ($this->API.'/biaya/', array('AR-KEY'=>$this->key, 'id'=>$Biaya_ID));
-          
-        if($delete)
-        {
-            $this->session->set_flashdata('success',$this->success.' Dihapus');
-        }else
-        {
-            $this->session->set_flashdata('error',$this->error.' Dihapus');
-        }
-        redirect('biaya?modul=masterBiaya&act=Tambah');
-    }
+      $alertMessage = "Data tidak terhapus";
+      $delete =  $this->curl->simple_delete       
+                  ($this->API.'/biaya/', array('AR-KEY'=>$this->key, 'id'=>$Biaya_ID));
+        
+      if($delete)
+      {
+          $this->session->set_flashdata('success',$this->success.' Dihapus');
+      }else
+      {
+          $this->session->set_flashdata('error',$this->error.' Dihapus');
+      }
+      redirect('biaya?modul=masterBiaya&act=Tambah');
+  }
 }
