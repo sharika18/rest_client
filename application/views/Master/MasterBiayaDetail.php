@@ -156,7 +156,7 @@
                                   
                   <div class="form-group">
                     <label>Ketentuan :</label>
-                    <textarea type="text" class="form-control" id="txtKetentuan" name="txtKetentuan" rows="3" placeholder="Ketentuan"><?=$ketentuan?><?=$startdate?></textarea>
+                    <textarea type="text" class="form-control" id="txtKetentuan" name="txtKetentuan" rows="3" placeholder="Ketentuan"><?=$ketentuan?></textarea>
                   </div>
 
                 </div>

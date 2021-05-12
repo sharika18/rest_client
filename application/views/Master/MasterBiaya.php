@@ -7,6 +7,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | DataTables</title>
+
+  
+		
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -24,6 +27,7 @@
               <li class="breadcrumb-item"><a href="?modul=home">Home</a></li>
               <li class="breadcrumb-item active">Master Biaya</li>
             </ol>
+            
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -42,13 +46,13 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?php echo base_url()?>biaya/<?php echo $_GET['act'] ?>" method="post">
+              <form action="<?php echo base_url()?>biaya/<?php echo $_GET['act'] ?>" method="post" id="formSubmit">
                 <div class="card-body">
                 
                 <input type="hidden" class="form-control" id="txtID" name="txtID" value="<?=$Id?>"/>
                 <input type="hidden" class="form-control" id="txtID" name="CreatedBy" value="<?=$CreatedBy?>"/>
                 <input type="hidden" class="form-control" id="txtID" name="CreatedDate" value="<?=$CreatedDate?>"/>
-                
+                <p class="error"><?php echo $this->session->flashdata('GagalDeleteBiaya');?></p>
                   <div class="form-group">
                     <label>Nama Biaya</label>
                     <input type="text" class="form-control" id="txtDeskripsi" name="txtDeskripsi" placeholder="Nama Biaya"
@@ -58,18 +62,19 @@
                 </div>
                 <!-- /.card-body -->
 
+                </form>
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary"><?php echo $_GET['act'] ?></button>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-primary">
-                    Launch Primary Modal
-                  </button>
+                  <button type="submit" 
+                    class="btnSubmit btn btn-primary"
+                    data-toggle="modal" 
+                    data-target="#modalSubmit"
+                    ><?php echo $_GET['act'] ?></button>
                 </div>
-              </form>
             </div>
             <!-- /.card -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Manage Biaya</h3>
+                <h3 class="card-title">Data Biaya</h3>
               </div>
               
               <!-- /.card-header -->
@@ -77,13 +82,15 @@
                 <table id="dgMasterBiaya" class="table table-bordered table-striped">
                   <thead>
                   <tr>
+                    
+                    <th>ID</th>
                     <th>No</th>
                     <th>Nama Biaya</th>
                     <th>Created By</th>
                     <th>Created Date</th>
                     <th>Modified By</th>
                     <th>Modified Date</th>
-                    <th>Aksi</th>
+                    <th>Act</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -94,25 +101,23 @@
                       { 
                         $rowNumber++;
                     ?>
+                      
                       <tr>
+                        <td><?=$biaya[$i]['Biaya_ID'];?></td>
                         <td><?=$rowNumber;?></td>
-                        <td><?=$biaya[$i]['Deskripsi'];?></td>
-                        <!-- <td>
-                          <?
-                          // =$biaya[$i]['Jenjang'];
-                          ?>
-                        </td> -->
+                        <td class="tdDeskripsi"><?=$biaya[$i]['Deskripsi'];?></td>
                         <td><?=$biaya[$i]['CreatedBy'];?></td>
                         <td><?=$biaya[$i]['CreatedDate'];?></td>
                         <td><?=$biaya[$i]['ModifiedBy'];?></td>
                         <td><?=$biaya[$i]['ModifiedDate'];?></td>
-                        <td> 
-                        <a href="<?php echo base_url()?>Biaya/GetID/<?php echo$biaya[$i]['Biaya_ID']; ?>?modul=masterBiaya&act=Edit" class="nav-link">Edit</a>
-                        <a href="<?php echo base_url()?>Biaya/Hapus/<?php echo$biaya[$i]['Biaya_ID']; ?>?modul=masterBiaya&act=Hapus" class="nav-link"
-                        onclick="return confirm('Yakin mau hapus data <?php echo strtoupper($biaya[$i]['Deskripsi']); ?>? ntar nyesel loh wkwkwk')">Delete</a>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-primary">
-                    Launch Primary Modal
-                  </button>
+                        <td>
+                          <div class="btn-group">
+                            <a  href="<?php echo base_url()?>Biaya/GetID/<?php echo$biaya[$i]['Biaya_ID']; ?>?modul=masterBiaya&act=Edit" 
+                                class="btnEdit btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                            <button class="btnDelete btn btn-danger btn-sm" 
+                                data-toggle="modal" 
+                                data-target="#modalDelete"><i class="far fa-trash-alt"></i></button>
+                          </div>
                         </td>
                       </tr>
                     <?php
@@ -121,13 +126,14 @@
                   </tbody>
                   <tfoot>
                     <tr>
+                      <th>ID</th>
                       <th>No</th>
                       <th>Nama Biaya</th>
                       <th>Created By</th>
                       <th>Created Date</th>
                       <th>Modified By</th>
                       <th>Modified Date</th>
-                      <th>Aksi</th>
+                      <th>Act</th>
                     </tr>
                   </tfoot>
                 </table>
@@ -142,36 +148,29 @@
         <!-- /.row -->
       </div>
       <!-- /.container-fluid -->
-
-      <div class="modal fade" id="modal-primary">
-    <div class="modal-dialog">
-      <div class="modal-content bg-primary">
-        <div class="modal-header">
-          <h4 class="modal-title">Primary Modal</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>One fine body&hellip;</p>
-        </div>
-        <div class="modal-footer justify-content-between">
-          <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-          <a href="<?php echo base_url()?>Biaya/Hapus/<?php echo$biaya[$i]['Biaya_ID']; ?>?modul=masterBiaya&act=Hapus" class="nav-link"
-                        onclick="return confirm('Yakin mau hapus data <?php echo strtoupper($biaya[$i]['Deskripsi']); ?>? ntar nyesel loh wkwkwk')">Delete
-          <button type="button" class="btn btn-outline-light">Save changes</button></a>
-        </div>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
     </section>
     <!-- /.content -->
   <!-- /.content-wrapper -->
-
+  <?php 
+    include dirname(__DIR__)."/Common/AlertBoxDelete.php";
+    include dirname(__DIR__)."/Common/AlertBoxSubmit.php"; 
+    $this->load->view('common/alert');
+  ?>
+  <?php
+  
+  ?>
+  
 </div>
 <!-- ./wrapper -->
+<script>
+  
+  function myFunction() {
+    document.getElementById("formSubmit").submit();
+  }
+</script>
 </body>
 </html>
+
+
+
 

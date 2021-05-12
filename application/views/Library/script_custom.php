@@ -2,10 +2,20 @@
 <script>
   //DataTable
   $(function () {
-    $("#dgMasterBiaya").DataTable({
+    var masterBiayaTable = $("#dgMasterBiaya").DataTable({
+      destroy: true,
       "responsive": true,
       "autoWidth": false,
+      "paging": false,
+      "columnDefs": [
+            {
+                "targets": [ 0],
+                "visible": false,
+                "searchable": false
+            }
+        ]
     });
+    
     $("#dgMasterBiayaDetail").DataTable({
       "responsive": true,
       "autoWidth": false,
