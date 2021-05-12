@@ -40,12 +40,12 @@ class BiayaDetail extends Biaya
         # alt + bawah/atas > untuk memindahkan data baris atas ke bawah
         # contoh harcode param...
         # 'Deskripsi'     => "contoh harcode param", 
-        'Biaya_ID'     => $this->input-> post ('txtBiaya'),
+        'Biaya_ID'      => $this->input-> post ('txtBiaya'),
         'Jenjang'       => $this->input-> post ('txtJenjang'),
-        'Gelombang'       => $this->input-> post ('txtGelombang'),
+        'Gelombang'     => $this->input-> post ('txtGelombang'),
         'Nominal'       => $this->input-> post ('txtNominal'),
-        'Ketentuan'       => $this->input-> post ('txtKetentuan'),
-        'StartDate'       => $this->input-> post ('txtStartDate'),
+        'Ketentuan'     => $this->input-> post ('txtKetentuan'),
+        'StartDate'     => $this->input-> post ('txtStartDate'),
         'EndDate'       => $this->input-> post ('txtEndDate'),
         'CreatedBy'     => "DEPRA", //$this->input-> post ('CreatedBy'),
         'CreatedDate'   => $now,
@@ -53,16 +53,7 @@ class BiayaDetail extends Biaya
         'ModifiedDate'  => $now,
         'AR-KEY'        => $this->key,
     ];
-    # contoh ditulis dengan array...
-    // array(
-    //     'AR-KEY'        => $this->key,
-    //     'Deskripsi'     => $this->input-> post ('txtDeskripsi'),
-    //     'Jenjang'       => $this->input-> post ('txtJenjang'),
-    //     'CreatedBy'     => $this->input-> post ('CreatedBy'),
-    //     'CreatedDate'   => $this->input-> post ('CreatedDate'),
-    //     'ModifiedBy'    => $this->input-> post ('ModifiedBy'),
-    //     'ModifiedDate'  => $this->input-> post ('ModifiedDate')
-    // );
+
     $insert = $this->curl->simple_post($this->API.'/biaya_detail/', $data, array(CURLOPT_BUFFERSIZE => 10)); 
     if($insert)
     {
@@ -72,6 +63,38 @@ class BiayaDetail extends Biaya
         $this->session->set_flashdata('hasil','Insert Data Gagal');
     }
     redirect('biayadetail?modul=masterBiayaDetail&act=Tambah');
+    }
+
+    function EditBiayaDetail()
+    {
+      $now = date('Y-m-d H:i:s');
+      $data = array(
+          # alt + Shift + bawah > untuk copy data ke baris bawah
+          # alt + bawah/atas > untuk memindahkan data baris atas ke bawah
+          # contoh harcode param...
+          # 'Deskripsi'     => "contoh harcode param", 
+          'Biaya_ID'      => $this->input-> post ('txtBiaya'),
+          'Jenjang'       => $this->input-> post ('txtJenjang'),
+          'Gelombang'     => $this->input-> post ('txtGelombang'),
+          'Nominal'       => $this->input-> post ('txtNominal'),
+          'Ketentuan'     => $this->input-> post ('txtKetentuan'),
+          'StartDate'     => $this->input-> post ('txtStartDate'),
+          'EndDate'       => $this->input-> post ('txtEndDate'),
+          'CreatedBy'     => "DEPRA", //$this->input-> post ('CreatedBy'),
+          'CreatedDate'   => $now,
+          'ModifiedBy'    => $this->input-> post ('ModifiedBy'), //belum diset
+          'ModifiedDate'  => $now,
+          'AR-KEY'        => $this->key,
+      );
+      $update = $this->curl->simple_put($this->API.'/biaya_detail/', $data, array(CURLOPT_BUFFERSIZE => 10)); 
+      if($update)
+      {
+          $this->session->set_flashdata('success',$this->success.' Diubah');
+      }else
+      {
+          $this->session->set_flashdata('error',$this->error.' Diubah');
+      }
+      redirect('biayadetail?modul=masterBiayaDetail&act=Tambah');
     }
 
     function Hapus($Biaya_Detail_ID)
