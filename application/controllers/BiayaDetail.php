@@ -92,7 +92,7 @@ class BiayaDetail extends Biaya
       redirect('biayadetail?modul=masterBiayaDetail&act=Tambah');
     }
 
-    function Hapus($Biaya_Detail_ID)
+    function HapusBiayaDetail($Biaya_Detail_ID)
     {
         $delete =  $this->curl->simple_delete
         ($this->API.'/biaya_detail/', array('AR-KEY'=>$this->key, 'id'=>$Biaya_Detail_ID));

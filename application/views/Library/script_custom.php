@@ -17,8 +17,17 @@
     });
     
     $("#dgMasterBiayaDetail").DataTable({
+      "destroy": true,
       "responsive": true,
       "autoWidth": false,
+      "paging": true,
+      "columnDefs": [
+            {
+                "targets": [ 0],
+                "visible": false,
+                "searchable": false
+            }
+        ]
     });
   });
 

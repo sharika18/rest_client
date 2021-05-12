@@ -11,7 +11,7 @@
         $act = $_GET['act'].'Biaya';
     }
     $deleteControllerPath = base_url()."Biaya/HapusBiaya/";
-    $deleteHrefParam = "?modul=".$_GET['modul']."&act=".$act;
+    $deleteHrefParam = "?modul=".$_GET['modul']."&act=HapusBiaya";
     $idDataTable ="#dgMasterBiaya";
 
     IF(($_GET['act']=='Edit'))

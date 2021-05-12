@@ -100,6 +100,7 @@
                       for ($i=0; $i< count($biaya); $i++)
                       { 
                         $rowNumber++;
+                        $id = $biaya[$i]['Biaya_ID'];
                     ?>
                       
                       <tr>
@@ -112,7 +113,7 @@
                         <td><?=$biaya[$i]['ModifiedDate'];?></td>
                         <td>
                           <div class="btn-group">
-                            <a  href="<?php echo base_url()?>Biaya/GetID/<?php echo$biaya[$i]['Biaya_ID']; ?>?modul=masterBiaya&act=Edit" 
+                            <a  href="<?php echo base_url()?>Biaya/GetID/<?=$id?>?modul=masterBiaya&act=Edit" 
                                 class="btnEdit btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
                             <button  id="biayaId" class="btnDelete btn btn-danger btn-sm" 
                                 data-toggle="modal" 
@@ -124,18 +125,6 @@
                       }
                     ?>
                   </tbody>
-                  <tfoot>
-                    <tr>
-                      <th>ID</th>
-                      <th>No</th>
-                      <th>Nama Biaya</th>
-                      <th>Created By</th>
-                      <th>Created Date</th>
-                      <th>Modified By</th>
-                      <th>Modified Date</th>
-                      <th>Act</th>
-                    </tr>
-                  </tfoot>
                 </table>
               </div>
               <!-- /.card-body -->
@@ -156,18 +145,8 @@
     include dirname(__DIR__)."/Common/AlertBoxSubmit.php"; 
     $this->load->view('common/alert');
   ?>
-  <?php
-  
-  ?>
-  
 </div>
 <!-- ./wrapper -->
-<script>
-  
-  function myFunction() {
-    document.getElementById("formSubmit").submit();
-  }
-</script>
 </body>
 </html>
 

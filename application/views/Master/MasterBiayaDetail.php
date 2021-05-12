@@ -177,9 +177,8 @@
                 <table id="dgMasterBiayaDetail" class="table table-bordered table-striped">
                   <thead>
                   <tr>
+                    <th>ID</th>
                     <th>No</th>
-                    <!-- <th>Biaya Deatail ID</th>
-                    <th>Biaya ID</th> -->
                     <th>Deskripsi</th>
                     <th>Gelombang</th>
                     <th>Nominal</th>
@@ -197,43 +196,31 @@
                       for ($i=0; $i< count($biayaDetail); $i++)
                       { 
                         $rowNumber++;
+                        $id = $biayaDetail[$i]['Biaya_Detail_ID'];
                     ?>
                       <tr>
+                        <td><?=$biayaDetail[$i]['Biaya_Detail_ID'];?></td>
                         <td><?=$rowNumber;?></td>
-                        <!-- <td><?=$biayaDetail[$i]['Biaya_Detail_ID'];?></td>
-                        <td><?=$biayaDetail[$i]['Biaya_ID'];?></td> -->
-                        <td><?=$biayaDetail[$i]['Deskripsi'];?> - <?=$biayaDetail[$i]['Jenjang'];?></td>
+                        <td class="tdDeskripsi"><?=$biayaDetail[$i]['Deskripsi'];?> - <?=$biayaDetail[$i]['Jenjang'];?></td>
                         <td><?=$biayaDetail[$i]['Gelombang'];?></td>
                         <td><?=$biayaDetail[$i]['Nominal'];?></td>
                         <td><?=$biayaDetail[$i]['Ketentuan'];?></td>
                         <td><?=$biayaDetail[$i]['StartDate'];?></td>
                         <td><?=$biayaDetail[$i]['EndDate'];?></td>
                         <td>
-                        <a href="<?php echo base_url()?>BiayaDetail/GetID/<?php echo$biayaDetail[$i]['Biaya_Detail_ID']; ?>?modul=masterBiayaDetail&act=Edit" class="nav-link">Edit</a>
-                        <a href="<?php echo base_url()?>BiayaDetail/Hapus/<?php echo$biayaDetail[$i]['Biaya_Detail_ID']; ?>?modul=masterBiayaDetail&act=Hapus" class="nav-link"
-                        onclick="return confirm('Yakin mau hapus data <?php echo strtoupper($biayaDetail[$i]['Deskripsi']); ?> - <?=$biayaDetail[$i]['Jenjang'];?>? ntar nyesel loh wkwkwk')">Delete</a>
+                          <div class="btn-group">
+                            <a  href="<?php echo base_url()?>BiayaDetail/GetID/<?=$id?>?modul=masterBiayaDetail&act=Edit" 
+                                class="btnEdit btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                            <button  id="biayaId" class="btnDelete btn btn-danger btn-sm" 
+                                data-toggle="modal" 
+                                data-target="#modalDelete"><i class="far fa-trash-alt"></i></button>
+                          </div>
                         </td>
-                        <!-- <td><?// =$biayaDetail[$i]['CreatedBy'];?></td>
-                        <td><?//=$biayaDetail[$i]['CreatedDate'];?></td> -->
                       </tr>
                     <?php
                       }
                     ?>
                   </tbody>
-                  <!-- <tfoot>
-                    <tr>
-                      <th>No</th>
-                      <th>Biaya Deatail ID</th>
-                      <th>Biaya ID</th>
-                      <th>Deskripsi</th>
-                      <th>Nominal</th>
-                      <th>Ketentuan</th>
-                      <th>StartDate</th>
-                      <th>EndDateDate</th>
-                      <th>CreatedBy</th>
-                      <th>CreatedDate</th>
-                    </tr>
-                  </tfoot> -->
                 </table>
               </div>
               <!-- /.card-body -->
@@ -247,10 +234,13 @@
     </section>
     <!-- /.content -->
   <!-- /.content-wrapper -->
-
+  <?php 
+    include dirname(__DIR__)."/Common/AlertBoxDelete.php";
+    include dirname(__DIR__)."/Common/AlertBoxSubmit.php"; 
+    $this->load->view('common/alert');
+  ?>                    
 </div>
 <!-- ./wrapper -->
-
 </body>
 </html>
 
