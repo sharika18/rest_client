@@ -127,11 +127,7 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
-        </a>
-      </li>
+      <!-- Customize -->
       <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
           <i class="fas fa-th-large"></i>
@@ -181,96 +177,91 @@
                 <i class="fas fa-home nav-icon"></i>
                 <p>Dashboard v3</p>
               </a>
-          </li>
-          <li class="nav-header">MAIN MENU</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Master
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <!--contoh href biaya adalah controler, modul master biaya adalah view-->
-                <a href="<?php echo base_url()?>biaya?modul=masterBiaya&act=Tambah" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Biaya</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <!--contoh href biaya adalah controler, modul master biaya adalah view-->
-                <a href="<?php echo base_url()?>biayadetail?modul=masterBiayaDetail&act=Tambah" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Biaya Detail</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url()?>mahasiswa?modul=mahasiswa" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Mahasiswa</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Registrasi
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="<?php echo base_url()?>register" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>PAUD</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url()?>register" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>SDIQ</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url()?>register" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>SMP</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url()?>register" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>SMA</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-header">MISCELLANEOUS</li>
-          <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.0/" class="nav-link">
-              <i class="nav-icon fas fa-file"></i>
-              <p>Documentation</p>
-            </a>
-          </li>
+            </li>
+            
+            <li class="nav-header">MAIN MENU</li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-table"></i>
+                <p>
+                  Master
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <!--contoh href biaya adalah controler, modul master biaya adalah view-->
+                  <a href="<?php echo base_url()?>biaya?modul=masterBiaya&act=Tambah" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Biaya</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <!--contoh href biaya adalah controler, modul master biaya adalah view-->
+                  <a href="<?php echo base_url()?>biayadetail?modul=masterBiayaDetail&act=Tambah" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Biaya Detail</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo base_url()?>mahasiswa?modul=mahasiswa" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Mahasiswa</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-table"></i>
+                <p>
+                  Registrasi
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="<?php echo base_url()?>register" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>PAUD</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo base_url()?>register" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>SDIQ</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo base_url()?>register" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>SMP</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo base_url()?>register" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>SMA</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
+
     </div>
     <!-- /.sidebar -->
   </aside>
+  <!-- /.main Sidebar Container -->
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Call Content -->
-    <?php
-      include "content.php"; 
-    ?>
+    <?php include "content.php";?>
   </div>
   <!-- /.content-wrapper -->
+
+  <!-- Footer -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2014-2020 <a href="http://arrisalahlubuklinggau.com/">Arrisalah Lubuklinggau</a>.</strong>
     All rights reserved.
@@ -278,12 +269,14 @@
       <b>Version</b> 3.1.0-pre
     </div>
   </footer>
+  <!-- /.footer -->
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
+  
 </div>
 <!-- ./wrapper -->
 <?php

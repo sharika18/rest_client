@@ -31,19 +31,19 @@
     <div class="container-fluid">
       <div class="row mb-2" >
         <div class="col-sm-12">
-          <h4>Formulir Pendaftaran Santri Baru <p> 
-          Pesantren Modern Ar-Risalah Lubuklinggau Tahun Pelajaran 
-          <?php
-          echo date("Y") ."/";
-          echo date("Y")+1 . "<br>";
-          ?>
+          <h4>
+            Formulir Pendaftaran Santri Baru <p> 
+            Pesantren Modern Ar-Risalah Lubuklinggau Tahun Pelajaran 
+            <?php
+              echo date("Y") ."/";
+              echo date("Y")+1 . "<br>";
+            ?>
           </h4>
         </div>
       </div>
-      
-      
-    </div><!-- /.container-fluid -->
+    </div>
   </section>
+  <!-- ./content Header (Page header) -->
 
   <!-- Main content -->
   <section class="content">
@@ -93,39 +93,38 @@
                   </div>
                 </div>
                 <div class="bs-stepper-content">
-                  <!-- your steps content here -->
                   <div id="biodata-santri" class="content" role="tabpanel" aria-labelledby="biodata-santri-trigger">
                     <form id="formBiodataSantri">
-                      <div class="row">
-                        <div class="col-sm-12">
-                          <div class="form-group">
-                            <label for="exampleInputFile">Bukti Pembayaran(File berbentuk Gambar/Photo/PDF)</label>
-                            <div class="input-group">
-                              <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="exampleInputFile">
-                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                              </div>
-                              <div class="input-group-append">
-                                <span class="input-group-text">Upload</span>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <div class="form-group">
+                              <label for="exampleInputFile">Bukti Pembayaran(File berbentuk Gambar/Photo/PDF)</label>
+                              <div class="input-group">
+                                <div class="custom-file">
+                                  <input type="file" class="custom-file-input" id="exampleInputFile">
+                                  <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                </div>
+                                <div class="input-group-append">
+                                  <span class="input-group-text">Upload</span>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
+                        <?php 
+                          include "Pages/Register/FormSantri.php";
+                        ?>
                       </div>
-                      <hr>
-                      <?php
-                        include "Pages/Register/FormSantri.php";
-                      ?>
+                      <button class="btn btn-primary float-right"  id="btnNextSantri">Next</button>
                     </form>
-                    <button class="btn btn-primary float-right" onclick="stepper.next()">Next</button>
+                    
                     <br>
                   </div>
 
                   <div id="biodata-ayah" class="content" role="tabpanel" aria-labelledby="biodata-ayah-trigger">
                     <form id="formBiodataAyah">
-                      <?php
-                        include "Pages/Register/FormAyah.php";
-                      ?>
+                      <?php include "Pages/Register/FormAyah.php";?>
                     </form>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
                     <button class="btn btn-primary float-right" onclick="stepper.next()">Next</button>
@@ -146,14 +145,6 @@
                       <?php
                         include "Pages/Register/FormWali.php";
                       ?>
-                      <div class="row">
-                        <div class="col-sm-12">
-                          <div class="form-group">
-                            <label>Alamat</label>
-                            <textarea class="form-control" rows="2" placeholder="alamat wali"></textarea>
-                          </div>
-                        </div>
-                      </div>
                     </form>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
                     <button type="submit" class="btn btn-primary float-right">Submit</button>
@@ -180,7 +171,8 @@
 <?php
   include "Library/script_library.php";
   include "Library/script_custom.php";
-  include "Script/RegisterScript.php";
+  include "Script/FormSantriScript.php";
+  include "Script/FormAyahScript.php";
 ?>
 </body>
 </html>

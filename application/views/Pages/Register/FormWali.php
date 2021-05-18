@@ -11,8 +11,8 @@
         <input type="number"  onKeyPress="if(this.value.length==16) return false;" class="form-control" placeholder="NIK wali">
         </div>
     </div>
-    </div>
-    <div class="row">  
+</div>
+<div class="row">  
     <div class="col-sm-6">
         <div class="form-group">
         <label>Tempat Lahir*</label>
@@ -30,8 +30,8 @@
         </div>
         </div>
     </div>
-    </div>
-    <div class="row">
+</div>
+<div class="row">
     <div class="col-sm-6">
         <div class="form-group">
         <label>Pendidikan Terakhir Wali</label>
@@ -77,8 +77,8 @@
         </select>
         </div>
     </div>  
-    </div>
-    <div class="row">
+</div>
+<div class="row">
     <div class="col-sm-6">
         <div class="form-group">
         <label>Jumlah Penghasilan Wali per Bulan*</label>
@@ -108,4 +108,12 @@
         <input type="text" class="form-control" placeholder="nomor handphone wali">
         </div>
     </div>  
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="form-group">
+        <label>Alamat</label>
+        <textarea class="form-control" rows="2" placeholder="alamat wali"></textarea>
+        </div>
     </div>
+</div>

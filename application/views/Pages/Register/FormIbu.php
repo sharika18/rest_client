@@ -2,21 +2,25 @@
     <div class="col-sm-6">
         <div class="form-group">
         <label>Nama Lengkap*</label>
-        <input type="text" class="form-control" placeholder="nama lengkap ibu">
+        <input type="text" id="inputNamaLengkapIbu" name="inputNamaLengkapIbu"
+            class="form-control" placeholder="nama lengkap Ibu">
         </div>
     </div>
     <div class="col-sm-6">
         <div class="form-group">
         <label>Nomor Induk Kependudukan (NIK)*</label>
-        <input type="number" onKeyPress="if(this.value.length==16) return false;"  class="form-control" placeholder="NIK ibu">
+        <input type="number" onKeyPress="if(this.value.length==16) return false;" id="inputNIKIbu" name="inputNIKIbu"
+            class="form-control" placeholder="NIK Ibu">
         </div>
     </div>
-    </div>
-    <div class="row">  
+</div>
+<div class="row">  
     <div class="col-sm-6">
+        <!-- text input -->
         <div class="form-group">
         <label>Tempat Lahir*</label>
-        <input type="text" class="form-control" placeholder="tempat lahir ibu">
+        <input type="text" id="inputTempatLahirIbu" name="inputTempatLahirIbu"
+            class="form-control" placeholder="tempat lahir Ibu">
         </div>
     </div>
     <div class="col-sm-6">
@@ -30,13 +34,14 @@
         </div>
         </div>
     </div>
-    </div>
-    <div class="row">
+</div>
+<div class="row">
     <div class="col-sm-6">
+        <!-- text input -->
         <div class="form-group">
         <label>Pendidikan Terakhir Ibu</label>
-        <select class="custom-select">
-            <option value="0">--Pilih Pendidikan Terakhir--</option>
+        <select class="custom-select" id="selectPendidikanIbu" name="selectPendidikanIbu">
+            <option value="">--Pilih Pendidikan Terakhir--</option>
             <?php
             foreach($pendidikanTerakhirList as $listPendidikanTerakhir)
             {
@@ -58,8 +63,8 @@
         <!-- text input -->
         <div class="form-group">
         <label>Pekerjaan Ibu</label>
-        <select class="custom-select">
-            <option value="0">--Pilih Pekerjaan--</option>
+        <select class="custom-select" id="selectPekerjaanIbu" name="selectPekerjaanIbu">
+            <option value="">--Pilih Pekerjaan--</option>
             <?php
             foreach($pekerjaanList as $listPekerjaan)
             {
@@ -77,13 +82,14 @@
         </select>
         </div>
     </div>  
-    </div>
-    <div class="row">
+</div>
+<div class="row">
     <div class="col-sm-6">
+        <!-- text input -->
         <div class="form-group">
         <label>Jumlah Penghasilan Ibu per Bulan*</label>
-        <select class="custom-select">
-            <option value="0">--Pilih Jumlah Penghasilan--</option>
+        <select class="custom-select" id="selectPenghasilanIbu" name="selectPenghasilanIbu">
+            <option value="">--Pilih Jumlah Penghasilan--</option>
             <?php
             foreach($penghasilanList as $listPenghasilan)
             {
@@ -105,7 +111,8 @@
         <!-- text input -->
         <div class="form-group">
         <label>Nomor Handphone</label>
-        <input type="text" class="form-control" placeholder="nomor handphone ibu">
+        <input type="text" id="inputNomorHPIbu" name="inputNomorHPIbu"
+            class="form-control" placeholder="nomor handphone Ibu">
         </div>
     </div>  
-    </div>
+</div>

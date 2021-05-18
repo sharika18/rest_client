@@ -57,3 +57,7 @@
 
 <!-- Toastr -->
 <script src="<?php echo base_url();?>assets/AdminLTE/plugins/toastr/toastr.min.js"></script>
+
+<!-- jquery-validation -->
+<script src="<?php echo base_url();?>assets/AdminLTE/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="<?php echo base_url();?>assets/AdminLTE/plugins/jquery-validation/additional-methods.min.js"></script>

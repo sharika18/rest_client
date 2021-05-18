@@ -47,107 +47,107 @@
               <form action="<?php echo base_url()?>biayadetail/<?php echo $act?>" method="post" id="formSubmit">
                 <div class="card-body">
                 
-                <input type="hidden" class="form-control" id="txtID" name="txtID" value="<?=$Id?>"/>
-                <input type="hidden" class="form-control" id="CreatedBy" name="CreatedBy" value="<?=$CreatedBy?>"/>
-                <input type="hidden" class="form-control" id="CreatedDate" name="CreatedDate" value="<?=$CreatedDate?>"/>
-                <div class="row">
-                <div class="col-md-6">                                                    
-                  <div class="form-group">
-                      <label>Biaya :</label>
-                      <select class="custom-select" id="txtBiaya" name="txtBiaya">
-                      <option value="">Pilih Biaya</option>
-                      <?php
-                        for ($i=0; $i< count($biaya); $i++)
-                        {
-                          $value = $biaya[$i]['Deskripsi'];
-                          $selected = "";
-                          if($biaya_id == $biaya[$i]['Biaya_ID'])
+                  <input type="hidden" class="form-control" id="txtID" name="txtID" value="<?=$Id?>"/>
+                  <input type="hidden" class="form-control" id="CreatedBy" name="CreatedBy" value="<?=$CreatedBy?>"/>
+                  <input type="hidden" class="form-control" id="CreatedDate" name="CreatedDate" value="<?=$CreatedDate?>"/>
+                  <div class="row">
+                    <div class="col-md-6">                                                    
+                      <div class="form-group">
+                          <label>Biaya :</label>
+                          <select class="custom-select" id="txtBiaya" name="txtBiaya">
+                          <option value="">Pilih Biaya</option>
+                          <?php
+                            for ($i=0; $i< count($biaya); $i++)
+                            {
+                              $value = $biaya[$i]['Deskripsi'];
+                              $selected = "";
+                              if($biaya_id == $biaya[$i]['Biaya_ID'])
+                              {
+                                $selected = 'selected = "selected"';
+                              }
+                              echo '
+                                <option value="'.$biaya[$i]['Biaya_ID'].'" '.$selected.'>'.$value.'</option>
+                              ';
+                            }
+                          ?>
+                          </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label>Jenjang :</label>
+                        <select class="custom-select" id="txtJenjang" name="txtJenjang">
+                        <option value="">Pilih Jenjang</option>
+                        <?php
+                          foreach($jenjangList as $listJenjang)
                           {
-                            $selected = 'selected = "selected"';
+                            $selected = "";
+                            if($jenjang == $listJenjang)
+                            {
+                              $selected = 'selected = "selected"';
+                            }
+                            echo '
+                              <option value="'.$listJenjang. '"' .$selected. '>' .$listJenjang. '</option>
+                            ';
                           }
-                          echo '
-                            <option value="'.$biaya[$i]['Biaya_ID'].'" '.$selected.'>'.$value.'</option>
-                          ';
-                        }
-                      ?>
-                      </select>
-                  </div>
+                        ?>
+                        </select>    
+                      </div>
 
-                  <div class="form-group">
-                  <label>Jenjang :</label>
-                  <select class="custom-select" id="txtJenjang" name="txtJenjang">
-                  <option value="">Pilih Jenjang</option>
-                  <?php
-                    foreach($jenjangList as $listJenjang)
-                    {
-                      $selected = "";
-                      if($jenjang == $listJenjang)
-                      {
-                        $selected = 'selected = "selected"';
-                      }
-                      echo '
-                        <option value="'.$listJenjang. '"' .$selected. '>' .$listJenjang. '</option>
-                      ';
-                    }
-                  ?>
-                  </select>    
-                  </div>
+                      <div class="form-group">
+                        <label>Gelombang :</label>
+                        <select class="custom-select" id="txtGelombang" name="txtGelombang">
+                        <option value="">Pilih Gelombang</option>
+                        <?php
+                          foreach($gelombangList as $listGelombang)
+                          {
+                            $selected = "";
+                            if($gelombang == $listGelombang)
+                            {
+                              $selected = 'selected = "selected"';
+                            }
+                            echo '
+                              <option value="' .$listGelombang. '"' .$selected. '>' .$listGelombang. '</option>
+                            ';
+                          }
+                        ?>
+                        </select>    
+                      </div>
+                    </div>
 
-                  <div class="form-group">
-                  <label>Gelombang :</label>
-                  <select class="custom-select" id="txtGelombang" name="txtGelombang">
-                  <option value="">Pilih Gelombang</option>
-                  <?php
-                    foreach($gelombangList as $listGelombang)
-                    {
-                      $selected = "";
-                      if($gelombang == $listGelombang)
-                      {
-                        $selected = 'selected = "selected"';
-                      }
-                      echo '
-                        <option value="' .$listGelombang. '"' .$selected. '>' .$listGelombang. '</option>
-                      ';
-                    }
-                  ?>
-                  </select>    
-                  </div>
-                </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Nominal :</label>
-                      <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="txtNominal" name="txtNominal" placeholder="Isi nominal biaya..."
-                        value="<?=$nominal?>">
-                        <div class="input-group-append" >
-                          <span class="input-group-text">.00</span>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Nominal :</label>
+                        <div class="input-group mb-3">
+                          <input type="text" class="form-control" id="txtNominal" name="txtNominal" placeholder="Isi nominal biaya..."
+                          value="<?=$nominal?>">
+                          <div class="input-group-append" >
+                            <span class="input-group-text">.00</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label>Start Date :</label>
+                        <div class="input-group date" data-target-input="nearest" id="divStartDate">
+                            <input type="text" class="form-control datetimepicker-input" data-target="#txtStartDate" id="txtStartDate" name="txtStartDate" value="<?=$startdate?>"/>
+                            <div class="input-group-append" data-target="#txtStartDate" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
+                        </div>
+                      </div>             
+                      
+                      <div class="form-group">
+                        <label>End Date :</label>
+                        <div class="input-group date" data-target-input="nearest" id="divEndDate">
+                            <input type="text" class="form-control datetimepicker-input" data-target="#txtEndDate" id="txtEndDate" name="txtEndDate" value="<?=$enddate?>"/>
+                            <div class="input-group-append" data-target="#txtEndDate" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
                         </div>
                       </div>
                     </div>
-                    
-                    <div class="form-group">
-                      <label>Start Date :</label>
-                      <div class="input-group date" data-target-input="nearest" id="divStartDate">
-                          <input type="text" class="form-control datetimepicker-input" data-target="#txtStartDate" id="txtStartDate" name="txtStartDate" value="<?=$startdate?>"/>
-                          <div class="input-group-append" data-target="#txtStartDate" data-toggle="datetimepicker">
-                              <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                          </div>
-                      </div>
-                    </div>             
-                    
-                    <div class="form-group">
-                      <label>End Date :</label>
-                      <div class="input-group date" data-target-input="nearest" id="divEndDate">
-                          <input type="text" class="form-control datetimepicker-input" data-target="#txtEndDate" id="txtEndDate" name="txtEndDate" value="<?=$enddate?>"/>
-                          <div class="input-group-append" data-target="#txtEndDate" data-toggle="datetimepicker">
-                              <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                          </div>
-                      </div>
-                    </div>
                   </div>
-                </div>
-                                  
+
                   <div class="form-group">
                     <label>Ketentuan :</label>
                     <textarea type="text" class="form-control" id="txtKetentuan" name="txtKetentuan" rows="3" placeholder="Ketentuan"><?=$ketentuan?></textarea>
