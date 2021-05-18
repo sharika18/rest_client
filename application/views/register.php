@@ -125,9 +125,9 @@
                   <div id="biodata-ayah" class="content" role="tabpanel" aria-labelledby="biodata-ayah-trigger">
                     <form id="formBiodataAyah">
                       <?php include "Pages/Register/FormAyah.php";?>
+                      <button class="btn btn-primary float-right">Next</button>
                     </form>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
-                    <button class="btn btn-primary float-right">Next</button>
                   </div>
 
                   <div id="biodata-ibu" class="content" role="tabpanel" aria-labelledby="biodata-ibu-trigger">
@@ -135,9 +135,9 @@
                       <?php
                         include "Pages/Register/FormIbu.php";
                       ?>
+                      <button class="btn btn-primary float-right">Next</button>
                     </form>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
-                    <button class="btn btn-primary float-right">Next</button>
                   </div>
 
                   <div id="biodata-wali" class="content" role="tabpanel" aria-labelledby="biodata-wali-trigger">
@@ -145,9 +145,9 @@
                       <?php
                         include "Pages/Register/FormWali.php";
                       ?>
+                      <button type="submit" class="btn btn-primary float-right">Submit</button>
                     </form>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
-                    <button type="submit" class="btn btn-primary float-right">Submit</button>
                   </div>
                   
                 </div>
