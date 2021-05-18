@@ -1,5 +1,4 @@
 <script>
-
 $(function () {
     var selectedDateTanggalLahirWali=document.getElementById("dateTanggalLahirWali").value;
     $('#dateTanggalLahirWali').datetimepicker({
@@ -11,7 +10,6 @@ $(function () {
 $(function () {
   $.validator.setDefaults({
     submitHandler: function () {
-      alert( "Form successful submitted!" );
       stepper.next();
     }
   });

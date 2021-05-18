@@ -24,7 +24,6 @@ $(function () {
 $(function () {
   $.validator.setDefaults({
     submitHandler: function () {
-      alert( "Form successful submitted!" );
       stepper.next();
     }
   });
