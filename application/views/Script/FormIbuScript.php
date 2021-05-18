@@ -1,16 +1,10 @@
 <script>
 
 $(function () {
-    var selectedDateTanggalLahirAyah=document.getElementById("dateTanggalLahirAyah").value;
-    $('#dateTanggalLahirAyah').datetimepicker({
+    var selectedDateTanggalLahirIbu=document.getElementById("dateTanggalLahirIbu").value;
+    $('#dateTanggalLahirIbu').datetimepicker({
         format: 'YYYY-MM-DD',
-        date : selectedDateTanggalLahirAyah
-    });
-
-    var selectedDateTanggalLahirWali=document.getElementById("dateTanggalLahirWali").value;
-    $('#dateTanggalLahirWali').datetimepicker({
-        format: 'YYYY-MM-DD',
-        date : selectedDateTanggalLahirWali
+        date : selectedDateTanggalLahirIbu
     });
   });
 
@@ -21,27 +15,27 @@ $(function () {
       stepper.next();
     }
   });
-  $('#formBiodataAyah').validate({
+  $('#formBiodataIbu').validate({
     messages: {
-        inputNamaLengkapAyah: {
+        inputNamaLengkapIbu: {
             required: "Nama Lengkap Tidak Boleh Kosong"
         },
-        inputNIKAyah: {
+        inputNIKIbu: {
             required: "NIK Tidak Boleh Kosong"
         },
         inputTempatLahirIbu: {
             required: "Tempat Lahir Tidak Boleh Kosong"
         },
-        dateTanggalLahirAyah: {
+        dateTanggalLahirIbu: {
             required: "Tanggal Lahir Tidak Boleh Kosong"
         },
-        selectPendidikanAyah: {
+        selectPendidikanIbu: {
             required: "Pendidikan Tidak Boleh Kosong"
         },
-        selectPekerjaanAyah: {
+        selectPekerjaanIbu: {
             required: "Pekerjaan Tidak Boleh Kosong"
         },
-        selectPenghasilanAyah: {
+        selectPenghasilanIbu: {
             required: "Penghasilan Tidak Boleh Kosong"
         }
     },

@@ -127,7 +127,7 @@
                       <?php include "Pages/Register/FormAyah.php";?>
                     </form>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
-                    <button class="btn btn-primary float-right" onclick="stepper.next()">Next</button>
+                    <button class="btn btn-primary float-right">Next</button>
                   </div>
 
                   <div id="biodata-ibu" class="content" role="tabpanel" aria-labelledby="biodata-ibu-trigger">
@@ -137,7 +137,7 @@
                       ?>
                     </form>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
-                    <button class="btn btn-primary float-right" onclick="stepper.next()">Next</button>
+                    <button class="btn btn-primary float-right">Next</button>
                   </div>
 
                   <div id="biodata-wali" class="content" role="tabpanel" aria-labelledby="biodata-wali-trigger">
@@ -173,6 +173,8 @@
   include "Library/script_custom.php";
   include "Script/FormSantriScript.php";
   include "Script/FormAyahScript.php";
+  include "Script/FormIbuScript.php";
+  include "Script/FormWaliScript.php";
 ?>
 </body>
 </html>

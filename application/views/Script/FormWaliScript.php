@@ -1,12 +1,6 @@
 <script>
 
 $(function () {
-    var selectedDateTanggalLahirAyah=document.getElementById("dateTanggalLahirAyah").value;
-    $('#dateTanggalLahirAyah').datetimepicker({
-        format: 'YYYY-MM-DD',
-        date : selectedDateTanggalLahirAyah
-    });
-
     var selectedDateTanggalLahirWali=document.getElementById("dateTanggalLahirWali").value;
     $('#dateTanggalLahirWali').datetimepicker({
         format: 'YYYY-MM-DD',
@@ -21,28 +15,31 @@ $(function () {
       stepper.next();
     }
   });
-  $('#formBiodataAyah').validate({
+  $('#formBiodataWali').validate({
     messages: {
-        inputNamaLengkapAyah: {
+        inputNamaLengkapWali: {
             required: "Nama Lengkap Tidak Boleh Kosong"
         },
-        inputNIKAyah: {
+        inputNIKWali: {
             required: "NIK Tidak Boleh Kosong"
         },
         inputTempatLahirIbu: {
             required: "Tempat Lahir Tidak Boleh Kosong"
         },
-        dateTanggalLahirAyah: {
+        dateTanggalLahirWali: {
             required: "Tanggal Lahir Tidak Boleh Kosong"
         },
-        selectPendidikanAyah: {
+        selectPendidikanWali: {
             required: "Pendidikan Tidak Boleh Kosong"
         },
-        selectPekerjaanAyah: {
+        selectPekerjaanWali: {
             required: "Pekerjaan Tidak Boleh Kosong"
         },
-        selectPenghasilanAyah: {
+        selectPenghasilanWali: {
             required: "Penghasilan Tidak Boleh Kosong"
+        },
+        inputAlamatWali: {
+            required: "Alamat Tidak Boleh Kosong"
         }
     },
     errorElement: 'span',
