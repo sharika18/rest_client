@@ -1,5 +1,6 @@
 <?php
     include "Values/ListofValue.php";  
+    include "Library/head_library.php";
 ?>
 
 <!DOCTYPE html>
@@ -47,36 +48,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12">
-          <div class="form-group">
-            <label></label>
-            <div class="input-group">
-              <div class="input-group-append">
-                <span class="input-group-text">Jenjang</span>
-              </div>
-              <select class="custom-select" id="selectJenjang" name="selectJenjang">
-                <option value="0">Pilih jenjang untuk bisa memasukkan data registrasi</option>
-                <?php
-                  foreach($jenjangList as $listJenjang)
-                  {
-                    $selected = "";
-                    if($jenjang == $listJenjang)
-                    {
-                      $selected = 'selected = "selected"';
-                    }
-                    echo '
-                    
-                      <option value="'.$listJenjang. '"' .$selected. '>' .$listJenjang. '</option>
-                    ';
-                  }
-                ?>
-
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
+      <br>
       <div class="row">
         <div class="col-md-12">
           <div class="card card-default">
@@ -141,521 +113,39 @@
                         </div>
                       </div>
                       <hr>
-                      <div class="row">  
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Nama Lengkap Calon Santri*</label>
-                            <input type="text" id="inputNamaLengkapSantri" name="inputNamaLengkapSantri" 
-                            class="form-control" placeholder="nama lengkap calon santri">
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Nama Panggilan*</label>
-                            <input type="text" class="form-control" placeholder="nama panggilan calon santri">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-12">
-                          <div class="form-group">
-                            <label>Alamat</label>
-                            <textarea class="form-control" rows="2" placeholder="alamat calon santri"></textarea>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">  
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Tempat Lahir*</label>
-                            <input type="text" class="form-control" placeholder="tempat lahir calon santri">
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Tanggal Lahir*</label>
-                            <div class="input-group date" id="dateTanggalLahirSantri" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#dateTanggalLahirSantri"/>
-                                <div class="input-group-append" data-target="#dateTanggalLahirSantri" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">  
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Nomor Induk Kependudukan (NIK)*</label>
-                            <input type="number"  onKeyPress="if(this.value.length==16) return false;" class="form-control" placeholder="NIK calon santri">
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Jenis Kelamin*</label>
-                            <div class="form-group clearfix">
-                              <div class="row">
-                                <div class="col-sm-6">
-                                  <div class="icheck-primary d-inline">
-                                    <input type="radio" id="radioPrimary1" name="r1" checked>
-                                    <label for="radioPrimary1">Laki-laki </label>
-                                  </div>
-                                </div>
-                                <div class="col-sm-6">
-                                  <div class="icheck-primary d-inline">
-                                    <input type="radio" id="radioPrimary2" name="r1">
-                                    <label for="radioPrimary2">Perempuan</label>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Anak Ke dari Berapa Bersaudara*</label>
-                            <div class="row">  
-                              <div class="col-sm-6">
-                                <div class="input-group">
-                                  <div class="input-group-append">
-                                    <span class="input-group-text">Anak ke</span>
-                                  </div>
-                                  <input type="number" class="form-control" placeholder="anak ke">
-                                </div>
-                              </div>
-                              <div class="col-sm-6">
-                                <div class="input-group">
-                                  <div class="input-group-append">
-                                    <span class="input-group-text">dari</span>
-                                  </div>
-                                  <input type="number" class="form-control" placeholder="jumlah saudara">
-                                  <div class="input-group-append">
-                                    <span class="input-group-text">Bersaudara</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            
-                          </div>
-                        </div>  
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Tinggi dan Berat Badan*</label>
-                            <div class="row">  
-                              <div class="col-sm-6">
-                                <div class="input-group">
-                                  <input type="number" class="form-control" placeholder="tinggi badan">
-                                  <div class="input-group-append">
-                                    <span class="input-group-text">CM</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-sm-6">
-                                <div class="input-group">
-                                  <input type="number" class="form-control" placeholder="berat badan">
-                                  <div class="input-group-append">
-                                    <span class="input-group-text">KG</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-12">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Pilih Ukuran Seragam (Jilbab Hanya Untuk Perempuan)</label>
-                            <div class="row">  
-                              <div class="col-sm-4">
-                                <div class="input-group">
-                                  <div class="input-group-append">
-                                    <span class="input-group-text">Baju</span>
-                                  </div>
-                                  <select class="custom-select" id="selectUkuranBaju" name="selectUkuranBaju">
-                                    <option value="0">--Pilih Ukuran Baju--</option>
-                                    <?php
-                                      foreach($ukuranBajuCelanaList as $listUkuranBajuCelana)
-                                      {
-                                        $selected = "";
-                                        if("" == $listUkuranBajuCelana)
-                                        {
-                                          $selected = 'selected = "selected"';
-                                        }
-                                        echo '
-                                        
-                                          <option value="'.$listUkuranBajuCelana. '"' .$selected. '>' .$listUkuranBajuCelana. '</option>
-                                        ';
-                                      }
-                                    ?>
-                                  </select>
-                                </div>
-                              </div>
-                              <div class="col-sm-4">
-                                <div class="input-group">
-                                  <div class="input-group-append">
-                                    <span class="input-group-text">Celana</span>
-                                  </div>
-                                  <select class="custom-select" id="selectUkuranCelana" name="selectUkuranCelana">
-                                    <option value="0">--Pilih Ukuran Baju--</option>
-                                    <?php
-                                      foreach($ukuranBajuCelanaList as $listUkuranBajuCelana)
-                                      {
-                                        $selected = "";
-                                        if("" == $listUkuranBajuCelana)
-                                        {
-                                          $selected = 'selected = "selected"';
-                                        }
-                                        echo '
-                                        
-                                          <option value="'.$listUkuranBajuCelana. '"' .$selected. '>' .$listUkuranBajuCelana. '</option>
-                                        ';
-                                      }
-                                    ?>
-                                  </select>
-                                </div>
-                              </div>
-                              <div class="col-sm-4">
-                                <div class="input-group">
-                                  <div class="input-group-append">
-                                    <span class="input-group-text">Jilbab</span>
-                                  </div>
-                                  <select class="custom-select" id="selectUkuranJilbab" name="selectUkuranJilbab">
-                                    <option value="0">--Pilih Ukuran Baju--</option>
-                                    <?php
-                                      foreach($ukuranJilbabList as $listUkuranJilbab)
-                                      {
-                                        $selected = "";
-                                        if("" == $listUkuranJilbab)
-                                        {
-                                          $selected = 'selected = "selected"';
-                                        }
-                                        echo '
-                                        
-                                          <option value="'.$listUkuranJilbab. '"' .$selected. '>' .$listUkuranJilbab. '</option>
-                                        ';
-                                      }
-                                    ?>
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>  
-                      </div>
+                      <?php
+                        include "Pages/Register/FormSantri.php";
+                      ?>
                     </form>
-                   
                     <button class="btn btn-primary float-right" onclick="stepper.next()">Next</button>
                     <br>
                   </div>
+
                   <div id="biodata-ayah" class="content" role="tabpanel" aria-labelledby="biodata-ayah-trigger">
                     <form id="formBiodataAyah">
-                      <div class="row">  
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Nama Lengkap*</label>
-                            <input type="text" class="form-control" placeholder="nama lengkap ayah">
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Nomor Induk Kependudukan (NIK)*</label>
-                            <input type="number" onKeyPress="if(this.value.length==16) return false;" class="form-control" placeholder="NIK ayah">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">  
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Tempat Lahir*</label>
-                            <input type="text" class="form-control" placeholder="tempat lahir ayah">
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Tanggal Lahir*</label>
-                            <div class="input-group date" id="dateTanggalLahirAyah" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#dateTanggalLahirAyah"/>
-                                <div class="input-group-append" data-target="#dateTanggalLahirAyah" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Pendidikan Terakhir Ayah</label>
-                            <select class="custom-select">
-                              <option>--Pilih Pendidikan Terakhir--</option>
-                              <option>SD</option>
-                              <option>SMP</option>
-                              <option>SMA</option>
-                              <option>S1</option>
-                              <option>S2</option>
-                              <option>S3</option>
-                              <option>Tidak tamat SD</option>
-                            </select>
-                          </div>
-                        </div>  
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Pekerjaan Ayah</label>
-                            <select class="custom-select">
-                              <option>--Pilih Pekerjaan--</option>
-                              <option>Tidak Bekerja</option>
-                              <option>Wiraswasta</option>
-                              <option>PNS/TNI/POLRI</option>
-                              <option>Buruh Harian Lepas</option>
-                              <option>Pegawai BUMN/BUMD</option>
-                              <option>Karyawan Swasta</option>
-                              <option>Pedagang Besar</option>
-                              <option>Pedagang Kecil</option>
-                              <option>Lainnya</option>
-                            </select>
-                          </div>
-                        </div>  
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Jumlah Penghasilan Ayah per Bulan*</label>
-                            <select class="custom-select">
-                              <option>--Pilih Jumlah Penghasilan--</option>
-                              <option>Rp 0 s/d Rp 1.000.000</option>
-                              <option>Rp 1.000.000 s/d Rp 2.000.000</option>
-                              <option>Rp 2.000.000 s/d Rp 3.000.000</option>
-                              <option>Rp 3.000.000 s/d Rp 4.000.000</option>
-                              <option>Rp 4.000.000 s/d Rp 5.000.000</option>
-                              <option>Lebih dari Rp 5.000.000</option>
-                            </select>
-                          </div>
-                        </div>  
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Nomor Handphone</label>
-                            <input type="text" class="form-control" placeholder="nomor handphone ayah">
-                          </div>
-                        </div>  
-                      </div>
+                      <?php
+                        include "Pages/Register/FormAyah.php";
+                      ?>
                     </form>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
                     <button class="btn btn-primary float-right" onclick="stepper.next()">Next</button>
                   </div>
+
                   <div id="biodata-ibu" class="content" role="tabpanel" aria-labelledby="biodata-ibu-trigger">
                     <form id="formBiodataIbu">
-                      <div class="row">  
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Nama Lengkap*</label>
-                            <input type="text" class="form-control" placeholder="nama lengkap ibu">
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Nomor Induk Kependudukan (NIK)*</label>
-                            <input type="number" onKeyPress="if(this.value.length==16) return false;"  class="form-control" placeholder="NIK ibu">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">  
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Tempat Lahir*</label>
-                            <input type="text" class="form-control" placeholder="tempat lahir ibu">
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Tanggal Lahir*</label>
-                            <div class="input-group date" id="dateTanggalLahirIbu" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#dateTanggalLahirIbu"/>
-                                <div class="input-group-append" data-target="#dateTanggalLahirIbu" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Pendidikan Terakhir Ibu</label>
-                            <select class="custom-select">
-                              <option>--Pilih Pendidikan Terakhir--</option>
-                              <option>SD</option>
-                              <option>SMP</option>
-                              <option>SMA</option>
-                              <option>S1</option>
-                              <option>S2</option>
-                              <option>S3</option>
-                              <option>Tidak tamat SD</option>
-                            </select>
-                          </div>
-                        </div>  
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Pekerjaan Ibu</label>
-                            <select class="custom-select">
-                              <option>--Pilih Pekerjaan--</option>
-                              <option>Tidak Bekerja</option>
-                              <option>Wiraswasta</option>
-                              <option>PNS/TNI/POLRI</option>
-                              <option>Buruh Harian Lepas</option>
-                              <option>Pegawai BUMN/BUMD</option>
-                              <option>Karyawan Swasta</option>
-                              <option>Pedagang Besar</option>
-                              <option>Pedagang Kecil</option>
-                              <option>Lainnya</option>
-                            </select>
-                          </div>
-                        </div>  
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Jumlah Penghasilan Ibu per Bulan*</label>
-                            <select class="custom-select">
-                              <option>--Pilih Jumlah Penghasilan--</option>
-                              <option>Rp 0 s/d Rp 1.000.000</option>
-                              <option>Rp 1.000.000 s/d Rp 2.000.000</option>
-                              <option>Rp 2.000.000 s/d Rp 3.000.000</option>
-                              <option>Rp 3.000.000 s/d Rp 4.000.000</option>
-                              <option>Rp 4.000.000 s/d Rp 5.000.000</option>
-                              <option>Lebih dari Rp 5.000.000</option>
-                            </select>
-                          </div>
-                        </div>  
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Nomor Handphone</label>
-                            <input type="text" class="form-control" placeholder="nomor handphone ibu">
-                          </div>
-                        </div>  
-                      </div>
+                      <?php
+                        include "Pages/Register/FormIbu.php";
+                      ?>
                     </form>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
                     <button class="btn btn-primary float-right" onclick="stepper.next()">Next</button>
                   </div>
+
                   <div id="biodata-wali" class="content" role="tabpanel" aria-labelledby="biodata-wali-trigger">
                     <form id="formBiodataWali">
-                      <div class="row">  
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Nama Lengkap*</label>
-                            <input type="text" class="form-control" placeholder="nama lengkap wali">
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Nomor Induk Kependudukan (NIK)*</label>
-                            <input type="number"  onKeyPress="if(this.value.length==16) return false;" class="form-control" placeholder="NIK wali">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">  
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Tempat Lahir*</label>
-                            <input type="text" class="form-control" placeholder="tempat lahir wali">
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Tanggal Lahir*</label>
-                            <div class="input-group date" id="dateTanggalLahirWali" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#dateTanggalLahirWali"/>
-                                <div class="input-group-append" data-target="#dateTanggalLahirWali" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Pendidikan Terakhir Wali</label>
-                            <select class="custom-select">
-                              <option>--Pilih Pendidikan Terakhir--</option>
-                              <option>SD</option>
-                              <option>SMP</option>
-                              <option>SMA</option>
-                              <option>S1</option>
-                              <option>S2</option>
-                              <option>S3</option>
-                              <option>Tidak tamat SD</option>
-                            </select>
-                          </div>
-                        </div>  
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Pekerjaan Wali</label>
-                            <select class="custom-select">
-                              <option>--Pilih Pekerjaan--</option>
-                              <option>Tidak Bekerja</option>
-                              <option>Wiraswasta</option>
-                              <option>PNS/TNI/POLRI</option>
-                              <option>Buruh Harian Lepas</option>
-                              <option>Pegawai BUMN/BUMD</option>
-                              <option>Karyawan Swasta</option>
-                              <option>Pedagang Besar</option>
-                              <option>Pedagang Kecil</option>
-                              <option>Lainnya</option>
-                            </select>
-                          </div>
-                        </div>  
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Jumlah Penghasilan Wali per Bulan*</label>
-                            <select class="custom-select">
-                              <option>--Pilih Jumlah Penghasilan--</option>
-                              <option>Rp 0 s/d Rp 1.000.000</option>
-                              <option>Rp 1.000.000 s/d Rp 2.000.000</option>
-                              <option>Rp 2.000.000 s/d Rp 3.000.000</option>
-                              <option>Rp 3.000.000 s/d Rp 4.000.000</option>
-                              <option>Rp 4.000.000 s/d Rp 5.000.000</option>
-                              <option>Lebih dari Rp 5.000.000</option>
-                            </select>
-                          </div>
-                        </div>  
-                        <div class="col-sm-6">
-                          <!-- text input -->
-                          <div class="form-group">
-                            <label>Nomor Handphone</label>
-                            <input type="text" class="form-control" placeholder="nomor handphone wali">
-                          </div>
-                        </div>  
-                      </div>
+                      <?php
+                        include "Pages/Register/FormWali.php";
+                      ?>
                       <div class="row">
                         <div class="col-sm-12">
                           <div class="form-group">
@@ -668,6 +158,7 @@
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
                     <button type="submit" class="btn btn-primary float-right">Submit</button>
                   </div>
+                  
                 </div>
               </div>
             </div>

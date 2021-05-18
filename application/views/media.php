@@ -176,10 +176,7 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-         
-          <li class="nav-item">
+           <li class="nav-item">
               <a href="./index3.html" class="nav-link">
                 <i class="fas fa-home nav-icon"></i>
                 <p>Dashboard v3</p>
@@ -215,10 +212,39 @@
                   <p>Mahasiswa</p>
                 </a>
               </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Registrasi
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="<?php echo base_url()?>register" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Registrasi</p>
+                  <p>PAUD</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url()?>register" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>SDIQ</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url()?>register" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>SMP</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url()?>register" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>SMA</p>
                 </a>
               </li>
             </ul>
