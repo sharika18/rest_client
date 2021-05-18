@@ -16,11 +16,8 @@ class BiayaDetail extends Biaya
 
   function index()
   {
-    // $data['Allbiaya'] = $this->GetBiaya();
-    // $data['biayaDetail'] = $this->Biaya->GetBiayaDetail();
     $data['biaya'] = $this->GetBiaya();
     $data['biayaDetail'] = $this->GetBiayaDetail();
-    //print_r($data);
     $this->load->view('media', $data);
   }
 
@@ -28,7 +25,6 @@ class BiayaDetail extends Biaya
   {
     $get_apiEditBiayaDetail = json_decode($this -> curl -> simple_get ($this->API.'/vw_biaya_detail/', array('AR-KEY'=>$this->key, 'id'=>$Biaya_Detail_ID) ),true);
     $data['editBiayaDetail'] = $get_apiEditBiayaDetail['data'];
-    //print_r($data);
     $data['biaya'] = $this->GetBiaya();
     $data['biayaDetail'] = $this->GetBiayaDetail();
     $this->load->view('media', $data);
