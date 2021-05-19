@@ -82,7 +82,7 @@
                   </div>
                 </div>
                 <div class="bs-stepper-content">
-                <form id="formRegister">
+                <form action="<?php echo base_url()?>biaya/Tambah" method="post" id="formRegister">
                   <div id="biodata-santri" class="content" role="tabpanel" aria-labelledby="biodata-santri-trigger">                    
                       <div class="card-body">
                         <div class="row">
@@ -105,13 +105,13 @@
                           include "Pages/Register/FormSantri.php";
                         ?>
                       </div>
-                      <button class="btn btn-primary float-right"  id="btnNextSantri">Next</button>
+                      <button class="btn btn-primary float-right"  id="btnNextSantri" onclick="stepper.next()">Next</button>
                     <br>
                   </div>
 
                   <div id="biodata-ayah" class="content" role="tabpanel" aria-labelledby="biodata-ayah-trigger">
                     <?php include "Pages/Register/FormAyah.php";?>
-                      <button class="btn btn-primary float-right">Next</button>
+                      <button class="btn btn-primary float-right" onclick="stepper.next()">Next</button>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
                   </div>
 
@@ -119,7 +119,7 @@
                       <?php
                         include "Pages/Register/FormIbu.php";
                       ?>
-                    <button class="btn btn-primary float-right">Next</button>
+                    <button class="btn btn-primary float-right" onclick="stepper.next()">Next</button>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
                   </div>
 

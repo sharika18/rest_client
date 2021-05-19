@@ -3,7 +3,7 @@
 $(function () {
     $.validator.setDefaults({
         submitHandler: function () {
-        stepper.next();
+        alert('Validated');
         }
     });
 
