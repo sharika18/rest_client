@@ -1,5 +1,6 @@
 <?php
-    include "Values/ListofValue.php";  
+    include "Values/ListofValue.php"; 
+    include "Values/ValueRegister.php"; 
     include "Library/head_library.php";
 ?>
 
@@ -8,20 +9,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Registration Page</title>
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/plugins/fontawesome-free/css/all.min.css">
-  <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/dist/css/adminlte.min.css">
-  <!-- daterange picker -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/plugins/daterangepicker/daterangepicker.css">
-  <!-- BS Stepper -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/plugins/bs-stepper/css/bs-stepper.min.css">
+  <title>Arrisalah Lubuklinggau| Registration Page</title>
 </head>
 <body class="hold-transition sidebar-mini">
 
@@ -54,9 +42,10 @@
           <div class="card card-default">
             <div class="card-header">
               <h3 class="card-title" style="font-size:15px">
-                <b>Formulir akan diproses jika sudah melakukan pembayaran uang pendaftaran sebesar Rp 225.000,-</b> ke rekening Pesantren Modern Ar Risalah Bank BNI Syariah An. Yayasan Pesantren Modern Ar Risalah Lubuklinggau No. Rek 1511111169.
-                Jumlah Uang Pangkal yang harus dibayar sebesar Rp 8.000.000,- jika pembayaran dilakukan di Bulan April.
-                Jumlah Uang Pangkal yang harus dibayar sebesar Rp  9.000.000,- jika pembayaran dilakukan setelah bulan April.
+              <b>Formulir akan diproses jika sudah melakukan pembayaran uang pendaftaran sebesar Rp <?=$nominalPendaftaran;?>,-</b> 
+                ke rekening Pesantren Modern Ar Risalah Bank BNI Syariah An. Yayasan Pesantren Modern Ar Risalah Lubuklinggau No. Rek 1511111169.
+                <br>
+                <?=$summary?>
                 Info Lebih Lanjut Hubungi Panitia PSB di 0812-7875-8019.
               </h3>
             </div>
@@ -93,8 +82,8 @@
                   </div>
                 </div>
                 <div class="bs-stepper-content">
-                  <div id="biodata-santri" class="content" role="tabpanel" aria-labelledby="biodata-santri-trigger">
-                    <form id="formBiodataSantri">
+                <form id="formRegister">
+                  <div id="biodata-santri" class="content" role="tabpanel" aria-labelledby="biodata-santri-trigger">                    
                       <div class="card-body">
                         <div class="row">
                           <div class="col-sm-12">
@@ -117,39 +106,31 @@
                         ?>
                       </div>
                       <button class="btn btn-primary float-right"  id="btnNextSantri">Next</button>
-                    </form>
-                    
                     <br>
                   </div>
 
                   <div id="biodata-ayah" class="content" role="tabpanel" aria-labelledby="biodata-ayah-trigger">
-                    <form id="formBiodataAyah">
-                      <?php include "Pages/Register/FormAyah.php";?>
+                    <?php include "Pages/Register/FormAyah.php";?>
                       <button class="btn btn-primary float-right">Next</button>
-                    </form>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
                   </div>
 
                   <div id="biodata-ibu" class="content" role="tabpanel" aria-labelledby="biodata-ibu-trigger">
-                    <form id="formBiodataIbu">
                       <?php
                         include "Pages/Register/FormIbu.php";
                       ?>
-                      <button class="btn btn-primary float-right">Next</button>
-                    </form>
+                    <button class="btn btn-primary float-right">Next</button>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
                   </div>
 
                   <div id="biodata-wali" class="content" role="tabpanel" aria-labelledby="biodata-wali-trigger">
-                    <form id="formBiodataWali">
-                      <?php
+                    <?php
                         include "Pages/Register/FormWali.php";
                       ?>
-                      <button type="submit" class="btn btn-primary float-right">Submit</button>
-                    </form>
+                    <button type="submit" class="btn btn-primary float-right">Submit</button>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
                   </div>
-                  
+                </form>
                 </div>
               </div>
             </div>
@@ -171,10 +152,8 @@
 <?php
   include "Library/script_library.php";
   include "Library/script_custom.php";
-  include "Script/FormSantriScript.php";
-  include "Script/FormAyahScript.php";
-  include "Script/FormIbuScript.php";
-  include "Script/FormWaliScript.php";
+  include "Script/FormRegistrasiScript.php";
+  include "Script/FormRegisterValidationScript.php";
 ?>
 </body>
 </html>

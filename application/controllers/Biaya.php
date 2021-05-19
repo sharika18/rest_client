@@ -38,9 +38,9 @@ class Biaya extends CI_Controller{
     $this->load->view('media', $data);
   }
   
-  function GetID($Biaya_ID = '')
+  function GetID($id = '')
   {
-    $get_apiEditBiaya = json_decode($this -> curl -> simple_get ($this->API.'/biaya/', array('AR-KEY'=>$this->key, 'id'=>$Biaya_ID) ),true);
+    $get_apiEditBiaya = json_decode($this -> curl -> simple_get ($this->API.'/biaya/', array('AR-KEY'=>$this->key, 'id'=>$id) ),true);
     $data['editBiaya'] = $get_apiEditBiaya['data'];
     // print_r($data);
     $data['biaya'] = $this->GetBiaya();

@@ -221,25 +221,25 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?php echo base_url()?>register" class="nav-link">
+                  <a href="<?php echo base_url()?>register/RegistrasiGetBiayaDetail/PAUD" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>PAUD</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?php echo base_url()?>register" class="nav-link">
+                  <a href="<?php echo base_url()?>register/RegistrasiGetBiayaDetail/SDIQ" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>SDIQ</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?php echo base_url()?>register" class="nav-link">
+                  <a href="<?php echo base_url()?>register/RegistrasiGetBiayaDetail/SMP" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>SMP</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?php echo base_url()?>register" class="nav-link">
+                  <a href="<?php echo base_url()?>register/RegistrasiGetBiayaDetail/SMA" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>SMA</p>
                   </a>

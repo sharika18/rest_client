@@ -20,7 +20,7 @@ $(function () {
       stepper.next();
     }
   });
-  $('#formBiodataAyah').validate({
+  $('#formRegister').validate({
     messages: {
         inputNamaLengkapAyah: {
             required: "Nama Lengkap Tidak Boleh Kosong"
