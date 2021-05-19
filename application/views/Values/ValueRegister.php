@@ -28,8 +28,8 @@
             
             if($deskripsi == "Uang Pangkal")
             {
-                $detailUangPangkal = "Jumlah Uang Pangkal yang harus dibayar untuk".$gelombang."sebesar Rp".$nominal.
-                ",-jika pembayaran dilakukan di Bulan".bulanIndonesia($startDate)."-".bulanIndonesia($endDate)."<br>";
+                $detailUangPangkal = "Jumlah Uang Pangkal yang harus dibayar untuk ".$gelombang." sebesar Rp".$nominal.
+                ",- jika pembayaran dilakukan di Bulan ".bulanIndonesia($startDate)."-".bulanIndonesia($endDate)."<br>";
                 $summary .= $detailUangPangkal;
             }
             

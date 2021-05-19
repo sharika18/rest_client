@@ -199,7 +199,7 @@
                         <td><?=$rowNumber;?></td>
                         <td class="tdDeskripsi"><?=$biayaDetail[$i]['Deskripsi'];?> - <?=$biayaDetail[$i]['Jenjang'];?></td>
                         <td><?=$biayaDetail[$i]['Gelombang'];?></td>
-                        <td><?=$biayaDetail[$i]['Nominal'];?></td>
+                        <td style="text-align:right"><?=number_format($biayaDetail[$i]['Nominal']);?></td>
                         <td><?=$biayaDetail[$i]['Ketentuan'];?></td>
                         <td><?=$biayaDetail[$i]['StartDate'];?></td>
                         <td><?=$biayaDetail[$i]['EndDate'];?></td>
