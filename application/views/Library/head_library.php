@@ -23,6 +23,8 @@
 <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 <!-- Toastr -->
 <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/plugins/toastr/toastr.min.css">
+<!-- BS Stepper -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/plugins/bs-stepper/css/bs-stepper.min.css">
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"
 		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="

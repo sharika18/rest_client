@@ -14,7 +14,7 @@ $(function () {
       stepper.next();
     }
   });
-  $('#formBiodataIbu').validate({
+  $('#formRegister').validate({
     messages: {
         inputNamaLengkapIbu: {
             required: "Nama Lengkap Tidak Boleh Kosong"

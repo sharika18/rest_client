@@ -50,4 +50,9 @@
   document.addEventListener('DOMContentLoaded', function () {
     window.stepper = new Stepper(document.querySelector('.bs-stepper'))
   });
+
+//File Input
+$(function () {
+  bsCustomFileInput.init();
+});
 </script>

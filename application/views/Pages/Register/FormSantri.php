@@ -68,11 +68,9 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-3">
         <div class="form-group">
-        <label>Anak Ke dari Berapa Bersaudara*</label>
-        <div class="row">  
-            <div class="col-sm-6">
+        <label>Anak Ke*</label>
             <div class="input-group">
                 <div class="input-group-append">
                 <span class="input-group-text">Anak ke</span>
@@ -80,29 +78,26 @@
                 <input type="number" id="inputAnakKe" name="inputAnakKe"
                     class="form-control" placeholder="anak ke" required>
             </div>
-            </div>
-            <div class="col-sm-6">
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+        <label>Jumlah Saudara*</label>
             <div class="input-group">
                 <div class="input-group-append">
                 <span class="input-group-text">dari</span>
                 </div>
                 <input type="number" id="inputDariBerapaSaudara" name="inputDariBerapaSaudara"
-                    class="form-control" placeholder="jumlah saudara" required>
+                    class="form-control" placeholder="berapa" required>
                 <div class="input-group-append">
                 <span class="input-group-text">Bersaudara</span>
                 </div>
             </div>
-            </div>
         </div>
-        
-        </div>
-    </div>  
-    <div class="col-sm-6">
-        <!-- text input -->
+    </div> 
+    <div class="col-sm-3">
         <div class="form-group">
-        <label>Tinggi dan Berat Badan*</label>
-        <div class="row">  
-            <div class="col-sm-6">
+        <label>Tinggi Badan*</label>
             <div class="input-group">
                 <input type="number" id="inputTinggiBadan" name="inputTinggiBadan"
                     class="form-control" placeholder="tinggi badan" required>
@@ -110,8 +105,11 @@
                 <span class="input-group-text">CM</span>
                 </div>
             </div>
-            </div>
-            <div class="col-sm-6">
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+        <label>Berat Badan*</label>
             <div class="input-group">
                 <input type="number" id="inputBeratBadan" name="inputBeratBadan"
                     class="form-control" placeholder="berat badan" required>
@@ -119,8 +117,6 @@
                 <span class="input-group-text">KG</span>
                 </div>
             </div>
-            </div>
-        </div>
         </div>
     </div>
 </div>
