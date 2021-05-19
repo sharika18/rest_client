@@ -7,7 +7,7 @@ class Register extends Biaya {
 	public function index()
 	{
 		$data['biayaDetail'] = $this->GetBiayaDetail();
-		print_r($data);
+		//print_r($data);
 		$this->load->view('register', $data);
 	}
 }

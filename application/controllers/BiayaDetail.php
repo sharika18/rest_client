@@ -34,7 +34,7 @@ class BiayaDetail extends Biaya
   {
     $now = date('Y-m-d H:i:s');
     $data = [
-        'Biaya_ID'     => $this->input-> post ('txtBiaya'),
+        'Biaya_ID'      => $this->input-> post ('txtBiaya'),
         'Jenjang'       => $this->input-> post ('txtJenjang'),
         'Gelombang'     => $this->input-> post ('txtGelombang'),
         'Nominal'       => $this->input-> post ('txtNominal'),
@@ -45,6 +45,7 @@ class BiayaDetail extends Biaya
         'CreatedDate'   => $now,
         'ModifiedBy'    => $this->input-> post ('ModifiedBy'), //belum diset
         'ModifiedDate'  => $now,
+        'Status'        => 1,
         'AR-KEY'        => $this->key,
     ];
     $insert = $this->curl->simple_post($this->API.'/biaya_detail/', $data, array(CURLOPT_BUFFERSIZE => 10)); 
@@ -78,8 +79,10 @@ class BiayaDetail extends Biaya
           'CreatedDate'   => $now,
           'ModifiedBy'    => $this->input-> post ('ModifiedBy'), //belum diset
           'ModifiedDate'  => $now,
+          'Status'        => "1",
           'AR-KEY'        => $this->key,
       );
+      // print_r($data);
       $update = $this->curl->simple_put($this->API.'/biaya_detail/', $data, array(CURLOPT_BUFFERSIZE => 10)); 
       if($update)
       {
