@@ -19,7 +19,7 @@
         <!-- text input -->
         <div class="form-group">
         <label>Tempat Lahir*</label>
-        <input type="text" id="inputTempatLahirIbu" name="inputTempatLahirIbu"
+        <input type="text" id="inputTempatLahirAyah" name="inputTempatLahirAyah"
             class="form-control" placeholder="tempat lahir ayah" required>
         </div>
     </div>
