@@ -12,7 +12,7 @@ class Register extends Biaya {
 		if($Api_GetBiayaDetailByJenjang)
 		{
 			$data['biayaDetail'] = $Api_GetBiayaDetailByJenjang['data'];
-			print_r($data);
+			//print_r($data);
 		}
 		$this->load->view('register', $data);
 	}
