@@ -13,17 +13,26 @@ $(function () {
         }
     });
     $.validator.addMethod(
-        "greatherThanJumlahSaudara", 
+        "anakKuValidasi", 
         function(value, element) {
             return this.optional(element) || (parseFloat(value) <= document.getElementById("inputDariBerapaSaudara").value);
         },
-        "Jumlah Saudara Tidak Boleh Lebih Besar"
+        "Jumlah Saudara Tidak Boleh Lebih Kecil"
     );
-
+    $.validator.addMethod(
+        "jumlahSaudaraValidasi", 
+        function(value, element) {
+            return this.optional(element) || (parseFloat(value) >= document.getElementById("inputAnakKe").value);
+        },
+        "Jumlah Saudara Tidak Boleh Lebih Kecil"
+    );
     $('#formSubmit').validate({
         rules: {
             inputAnakKe: {
-                greatherThanJumlahSaudara: true
+                anakKuValidasi: true
+            },
+            inputDariBerapaSaudara: {
+                jumlahSaudaraValidasi: true
             }
         },
         messages: {

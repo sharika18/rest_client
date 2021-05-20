@@ -82,7 +82,7 @@
                   </div>
                 </div>
                 <div class="bs-stepper-content">
-                <form action="<?php echo base_url()?>register/<?php echo $act?>" method="post" id="formSubmit">
+                <form action="<?php echo base_url()?>registrasi/<?php echo $act?>" method="post" id="formSubmit">
                   <div id="biodata-santri" class="content" role="tabpanel" aria-labelledby="biodata-santri-trigger">                    
                       <div class="card-body">
                         <div class="row">
