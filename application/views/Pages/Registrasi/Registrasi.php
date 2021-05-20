@@ -1,7 +1,7 @@
 <?php
-    include "Values/ListofValue.php"; 
-    include "Values/ValueRegister.php"; 
-    include "Library/head_library.php";
+    include dirname(__DIR__)."/../Values/ListofValue.php"; 
+    include dirname(__DIR__)."/../Values/ValueRegister.php"; 
+    include dirname(__DIR__)."/../Library/head_library.php";
 ?>
 
 <!DOCTYPE html>
@@ -102,7 +102,7 @@
                           </div>
                         </div>
                         <?php 
-                          include "Pages/Register/FormSantri.php";
+                          include "FormSantri.php";
                         ?>
                       </div>
                       <button class="btnNext btn btn-primary float-right" id="btnSubmitSantri" >Next</button>
@@ -112,7 +112,7 @@
                   <div id="biodata-ayah" class="content" role="tabpanel" aria-labelledby="biodata-ayah-trigger">
                     <div class="card-body">
                       <?php
-                          include "Pages/Register/FormAyah.php";
+                          include "FormAyah.php";
                         ?>
                     </div>
                     <button class="btnNext btn btn-primary float-right" id="btnSubmitSantri" >Next</button>
@@ -122,7 +122,7 @@
                   <div id="biodata-ibu" class="content" role="tabpanel" aria-labelledby="biodata-ibu-trigger">
                     <div class="card-body">
                       <?php
-                          include "Pages/Register/FormIbu.php";
+                          include "FormIbu.php";
                         ?>
                     </div>
                     <button class="btnNext btn btn-primary float-right">Next</button>
@@ -132,7 +132,7 @@
                   <div id="biodata-wali" class="content" role="tabpanel" aria-labelledby="biodata-wali-trigger">
                     <div class="card-body">
                       <?php
-                          include "Pages/Register/FormWali.php";
+                          include "FormWali.php";
                         ?>
                     </div>
                     <button type="submit" class="btnSubmit btn btn-primary float-right" data-toggle="modal">
@@ -160,13 +160,13 @@
 
 
 <?php
-  include "Library/script_library.php";
-  include "Library/script_custom.php";
-  include "Script/FormRegistrasiScript.php";
-  include "Script/formRegisterValidationScript.php";
+  include dirname(__DIR__)."/../Library/script_library.php";
+  include dirname(__DIR__)."/../Library/script_custom.php";
+  include dirname(__DIR__)."/../Script/FormRegistrasiScript.php";
+  include dirname(__DIR__)."/../Script/formRegisterValidationScript.php";
 
-  include "Common/AlertBoxDelete.php";
-  include "Common/AlertBoxSubmit.php"; 
+  include dirname(__DIR__)."/../Common/AlertBoxDelete.php";
+  include dirname(__DIR__)."/../Common/AlertBoxSubmit.php"; 
   $this->load->view('common/alert');
 ?>
 </body>

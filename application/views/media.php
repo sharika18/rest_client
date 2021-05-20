@@ -221,25 +221,25 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?php echo base_url()?>register/RegistrasiGetBiayaDetail/PAUD?act=Tambah" class="nav-link">
+                  <a href="<?php echo base_url()?>registrasi/RegistrasiGetBiayaDetail/PAUD?act=Tambah" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>PAUD</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?php echo base_url()?>register/RegistrasiGetBiayaDetail/SDIQ?act=Tambah" class="nav-link">
+                  <a href="<?php echo base_url()?>registrasi/RegistrasiGetBiayaDetail/SDIQ?act=Tambah" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>SDIQ</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?php echo base_url()?>register/RegistrasiGetBiayaDetail/SMP?act=Tambah" class="nav-link">
+                  <a href="<?php echo base_url()?>registrasi/RegistrasiGetBiayaDetail/SMP?act=Tambah" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>SMP</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?php echo base_url()?>register/RegistrasiGetBiayaDetail/SMA?act=Tambah" class="nav-link">
+                  <a href="<?php echo base_url()?>registrasi/RegistrasiGetBiayaDetail/SMA?act=Tambah" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>SMA</p>
                   </a>

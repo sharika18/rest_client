@@ -52,13 +52,13 @@
             <div class="row">
             <div class="col-sm-6">
                 <div class="icheck-primary d-inline">
-                <input type="radio" id="radioLakilaki" name="radioJenisKelaminSantri" value="1" checked>
+                <input type="radio" id="radioLakilaki" name="radioJenisKelaminSantri" value="L" checked>
                 <label for="radioLakilaki">Laki-laki </label>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="icheck-primary d-inline">
-                <input type="radio" id="radioPerempuan" value="2" name="radioJenisKelaminSantri" required>
+                <input type="radio" id="radioPerempuan" value="P" name="radioJenisKelaminSantri" required>
                 <label for="radioPerempuan">Perempuan</label>
                 </div>
             </div>

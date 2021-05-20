@@ -59,7 +59,7 @@ $(document).ready(function () {
 
 $("input[name='radioJenisKelaminSantri']").change(function(){
     $("#divUkuranJilbab *").prop("disabled", false);
-    if($(this).val() == '1')
+    if($(this).val() == 'L')
     {
         document.getElementById("selectUkuranJilbab").value = "";
         $("#divUkuranJilbab *").prop("disabled", true);
