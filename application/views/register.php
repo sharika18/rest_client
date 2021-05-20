@@ -105,29 +105,37 @@
                           include "Pages/Register/FormSantri.php";
                         ?>
                       </div>
-                      <button class="btn btn-primary float-right"  id="btnNextSantri" onclick="stepper.next()">Next</button>
+                      <button class="btnNext btn btn-primary float-right" id="btnSubmitSantri" >Next</button>
                     <br>
                   </div>
 
                   <div id="biodata-ayah" class="content" role="tabpanel" aria-labelledby="biodata-ayah-trigger">
-                    <?php include "Pages/Register/FormAyah.php";?>
-                      <button class="btn btn-primary float-right" onclick="stepper.next()">Next</button>
+                    <div class="card-body">
+                      <?php
+                          include "Pages/Register/FormAyah.php";
+                        ?>
+                    </div>
+                    <button class="btnNext btn btn-primary float-right" id="btnSubmitSantri" >Next</button>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
                   </div>
 
                   <div id="biodata-ibu" class="content" role="tabpanel" aria-labelledby="biodata-ibu-trigger">
+                    <div class="card-body">
                       <?php
-                        include "Pages/Register/FormIbu.php";
-                      ?>
-                    <button class="btn btn-primary float-right" onclick="stepper.next()">Next</button>
+                          include "Pages/Register/FormIbu.php";
+                        ?>
+                    </div>
+                    <button class="btnNext btn btn-primary float-right">Next</button>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
                   </div>
 
                   <div id="biodata-wali" class="content" role="tabpanel" aria-labelledby="biodata-wali-trigger">
-                    <?php
-                        include "Pages/Register/FormWali.php";
-                      ?>
-                    <button type="submit" class="btn btn-primary float-right">Submit</button>
+                    <div class="card-body">
+                      <?php
+                          include "Pages/Register/FormWali.php";
+                        ?>
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right"  id="btnSubmitRegister">Submit</button>
                     <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
                   </div>
                 </form>

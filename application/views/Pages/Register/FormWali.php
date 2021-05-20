@@ -1,3 +1,39 @@
+
+<div class="card card-default">
+    <div class="card-header">
+    <h3 class="card-title">Pilih Data Wali</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group clearfix">
+                    <div class="icheck-primary d-inline">
+                        <input type="radio" id="ckBioDataAyah" name="ckBiodataWali" value="1">
+                        <label for="ckBioDataAyah">
+                            <small><em>wali adalah Ayah</em></small>
+                        </label>
+                    </div>
+                    &nbsp;
+                    <div class="icheck-primary d-inline">
+                        <input type="radio" id="ckBioDataIbu" name="ckBiodataWali" value="2">
+                        <label for="ckBioDataIbu">
+                            <small><em>wali adalah Ibu</em></small>
+                        </label>
+                    </div>
+                    &nbsp;
+                    <div class="icheck-success d-inline">
+                        <input type="radio" id="ckBioDataWali" name="ckBiodataWali" value="3" checked>
+                        <label for="ckBioDataWali">
+                            <small><em>wali selain Ayah/Ibu</em></small>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="divBiodataWali">
 <div class="row">  
     <div class="col-sm-6">
         <div class="form-group">
@@ -19,15 +55,16 @@
         <!-- text input -->
         <div class="form-group">
         <label>Tempat Lahir*</label>
-        <input type="text" id="inputTempatLahirIbu" name="inputTempatLahirIbu"
+        <input type="text" id="inputTempatLahirWali" name="inputTempatLahirWali"
             class="form-control" placeholder="tempat lahir Wali" required>
         </div>
     </div>
     <div class="col-sm-6">
         <div class="form-group">
         <label>Tanggal Lahir*</label>
-        <div class="input-group date" id="dateTanggalLahirWali" data-target-input="nearest">
-            <input type="text" class="form-control datetimepicker-input" data-target="#dateTanggalLahirWali" required/>
+        <div class="input-group date" data-target-input="nearest">
+            <input type="text" id="dateTanggalLahirWali" name="dateTanggalLahirWali"
+                class="form-control datetimepicker-input" data-target="#dateTanggalLahirWali" required/>
             <div class="input-group-append" data-target="#dateTanggalLahirWali" data-toggle="datetimepicker">
                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
             </div>
@@ -116,10 +153,19 @@
         </div>
     </div>  
 </div>
+</div>
+
 <div class="row">
     <div class="col-sm-12">
         <div class="form-group">
-        <label>Alamat</label>
+        <label>
+            Alamat &nbsp;
+        </label>
+        <div class="icheck-primary d-inline">
+            <input type="checkbox" id="ckAlamatWali" name="ckAlamatWali" required>
+            <label for="ckAlamatWali">  <small>checklist jika <em>sama dengan alamat calon santri</em></small>
+            </label>
+        </div>
         <textarea class="form-control" rows="2" placeholder="alamat wali" id="inputAlamatWali" name="inputAlamatWali"></textarea>
         </div>
     </div>

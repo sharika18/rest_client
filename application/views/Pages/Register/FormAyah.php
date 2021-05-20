@@ -19,15 +19,16 @@
         <!-- text input -->
         <div class="form-group">
         <label>Tempat Lahir*</label>
-        <input type="text" id="inputTempatLahirIbu" name="inputTempatLahirIbu"
+        <input type="text" id="inputTempatLahirAyah" name="inputTempatLahirAyah"
             class="form-control" placeholder="tempat lahir ayah" required>
         </div>
     </div>
     <div class="col-sm-6">
         <div class="form-group">
         <label>Tanggal Lahir*</label>
-        <div class="input-group date" id="dateTanggalLahirAyah" data-target-input="nearest">
-            <input type="text" class="form-control datetimepicker-input" data-target="#dateTanggalLahirAyah" required/>
+        <div class="input-group date" data-target-input="nearest">
+            <input type="text" id="dateTanggalLahirAyah" name="dateTanggalLahirAyah"
+                class="form-control datetimepicker-input" data-target="#dateTanggalLahirAyah" required/>
             <div class="input-group-append" data-target="#dateTanggalLahirAyah" data-toggle="datetimepicker">
                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
             </div>

@@ -1,12 +1,22 @@
 <script>
 //VALIDATION FUNCTION
 $(function () {
-    $.validator.setDefaults({
-        submitHandler: function () {
-        alert('Validated');
-        }
+    $(".btnNext").click(function() {
+        if ($( "#formRegister" ).valid()) {
+            stepper.next();
+          }
+    });
+    $( "#btnSubmitRegister").click(function() {
+        if ($( "#formRegister" ).valid()) {
+              alert('runs only if form is valid');
+          }
     });
 
+    $.validator.setDefaults({
+        submitHandler: function () {
+            //
+        }
+    });
     $.validator.addMethod(
         "greatherThanJumlahSaudara", 
         function(value, element) {

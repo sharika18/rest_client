@@ -26,8 +26,9 @@
     <div class="col-sm-6">
         <div class="form-group">
         <label>Tanggal Lahir*</label>
-        <div class="input-group date" id="dateTanggalLahirIbu" data-target-input="nearest">
-            <input type="text" class="form-control datetimepicker-input" data-target="#dateTanggalLahirIbu" required/>
+        <div class="input-group date" data-target-input="nearest">
+            <input type="text" id="dateTanggalLahirIbu" name="dateTanggalLahirIbu"
+                class="form-control datetimepicker-input" data-target="#dateTanggalLahirIbu" required/>
             <div class="input-group-append" data-target="#dateTanggalLahirIbu" data-toggle="datetimepicker">
                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
             </div>
