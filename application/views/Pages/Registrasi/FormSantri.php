@@ -124,7 +124,7 @@
     <div class="col-sm-12">
         <div class="form-group">
         <label>Alamat</label>
-        <textarea id="inputAlamatSantri" name="inputAlamatSantri"
+        <textarea type="text" id="inputAlamatSantri" name="inputAlamatSantri"
             class="form-control" rows="2" placeholder="alamat calon santri" required></textarea>
         </div>
     </div>

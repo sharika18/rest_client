@@ -102,7 +102,7 @@
                           </div>
                         </div>
                         <?php 
-                          include "Pages/Registrasi/FormSantri.php";
+                          include "Pages/Register/FormSantri.php";
                         ?>
                       </div>
                       <button class="btnNext btn btn-primary float-right" id="btnSubmitSantri" >Next</button>
@@ -112,7 +112,7 @@
                   <div id="biodata-ayah" class="content" role="tabpanel" aria-labelledby="biodata-ayah-trigger">
                     <div class="card-body">
                       <?php
-                          include "Pages/Registrasi/FormAyah.php";
+                          include "Pages/Register/FormAyah.php";
                         ?>
                     </div>
                     <button class="btnNext btn btn-primary float-right" id="btnSubmitSantri" >Next</button>
@@ -122,7 +122,7 @@
                   <div id="biodata-ibu" class="content" role="tabpanel" aria-labelledby="biodata-ibu-trigger">
                     <div class="card-body">
                       <?php
-                          include "Pages/Registrasi/FormIbu.php";
+                          include "Pages/Register/FormIbu.php";
                         ?>
                     </div>
                     <button class="btnNext btn btn-primary float-right">Next</button>
@@ -132,7 +132,7 @@
                   <div id="biodata-wali" class="content" role="tabpanel" aria-labelledby="biodata-wali-trigger">
                     <div class="card-body">
                       <?php
-                          include "Pages/Registrasi/FormWali.php";
+                          include "Pages/Register/FormWali.php";
                         ?>
                     </div>
                     <button type="submit" class="btnSubmit btn btn-primary float-right" data-toggle="modal">

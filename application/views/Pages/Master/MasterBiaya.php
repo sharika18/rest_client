@@ -1,5 +1,5 @@
 <?php                                                         
-      include dirname(__DIR__)."/Values/ValueMasterBiaya.php"; 
+      include dirname(__DIR__)."/../Values/ValueMasterBiaya.php"; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,11 +64,9 @@
 
                 </form>
                 <div class="card-footer">
-                  <button type="submit" 
-                    class="btnSubmit btn btn-primary"
-                    data-toggle="modal" 
-                    data-target="#modalSubmit"
-                    ><?php echo $_GET['act'] ?></button>
+                  <button type="submit" class="btnSubmit btn btn-primary float-right" data-toggle="modal">
+                      <?php echo $_GET['act'] ?>
+                  </button>
                 </div>
             </div>
             <!-- /.card -->
@@ -141,8 +139,8 @@
     <!-- /.content -->
   <!-- /.content-wrapper -->
   <?php 
-    include dirname(__DIR__)."/Common/AlertBoxDelete.php";
-    include dirname(__DIR__)."/Common/AlertBoxSubmit.php"; 
+    include dirname(__DIR__)."/../Common/AlertBoxDelete.php";
+    include dirname(__DIR__)."/../Common/AlertBoxSubmit.php"; 
     $this->load->view('common/alert');
   ?>
 </div>

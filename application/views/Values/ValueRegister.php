@@ -9,6 +9,14 @@
     $detailUangPangkal = "";
     $summary = "";
     
+    //OTHERS
+    $act = "Tambah";
+    IF($_GET['act'])
+    {
+        $act = $_GET['act'].'Registrasi';
+    }
+
+    //HEADER
     if($biayaDetail)
     {
         $ct = count($biayaDetail);

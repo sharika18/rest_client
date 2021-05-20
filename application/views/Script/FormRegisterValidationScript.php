@@ -2,13 +2,8 @@
 //VALIDATION FUNCTION
 $(function () {
     $(".btnNext").click(function() {
-        if ($( "#formRegister" ).valid()) {
+        if ($( "#formSubmit" ).valid()) {
             stepper.next();
-          }
-    });
-    $( "#btnSubmitRegister").click(function() {
-        if ($( "#formRegister" ).valid()) {
-              alert('runs only if form is valid');
           }
     });
 
@@ -25,7 +20,7 @@ $(function () {
         "Jumlah Saudara Tidak Boleh Lebih Besar"
     );
 
-    $('#formRegister').validate({
+    $('#formSubmit').validate({
         rules: {
             inputAnakKe: {
                 greatherThanJumlahSaudara: true

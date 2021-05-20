@@ -1,9 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-include_once (dirname(__FILE__) . "/Biaya.php");
-
-class Register extends Biaya {
+class Register extends CI_Controller {
+	public function __construct()
+	{
+		include "construct.php";
+	}
+	
 	function RegistrasiGetBiayaDetail($jenjang='', $status='')
 	{
 		$status = '1';
@@ -17,7 +20,7 @@ class Register extends Biaya {
 		$this->load->view('register', $data);
 	}
 
-	function Registrasi()
+	function TambahRegistrasi()
 	{ 
 		//$now = date('Y-m-d H:i:s');
 		$data = [
@@ -75,7 +78,7 @@ class Register extends Biaya {
 		{
 			$this->session->set_flashdata('error',$this->error.' Disimpan');
 		}
-		redirect('#');
+		redirect('media?modul=home');
 	}
 
 	function EditRegistrasi()

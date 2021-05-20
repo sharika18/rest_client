@@ -1,14 +1,17 @@
 <script>
     $(function () {
         $(".btnSubmit").click(function () {
-            var act = "<?php echo $_GET['act'] ?>";
-            var actValue = act.toLowerCase();
-            var message = "";
-                message +=
-                    "<p>Apakah kamu yakin ingin " +actValue+ " data tersebut?</p>";
+            if ($( "#formSubmit" ).valid()) {
+                $("#modalSubmit").modal();
+                var act = "<?php echo $_GET['act'] ?>";
+                var actValue = act.toLowerCase();
+                var message = "";
+                    message +=
+                        "<p>Apakah kamu yakin ingin " +actValue+ " data tersebut?</p>";
 
-            $("#modalSubmitContent").empty();
-            $("#modalSubmitContent").append(message);
+                $("#modalSubmitContent").empty();
+                $("#modalSubmitContent").append(message);
+            }
         });
     });
 </script>

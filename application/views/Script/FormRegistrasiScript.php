@@ -81,15 +81,15 @@ $("input[name='ckBiodataWali']").change(function(){
     if($(this).val() == '1')
     {
         valuesBiodataAyah();
-        $("#divBiodataWali *").prop("disabled", true);
+        $("#divBiodataWali *").prop("disabled", false);
     }
     else if($(this).val() == '2')
     {
         valuesBiodataIbu();
-        $("#divBiodataWali *").prop("disabled", true);
+        $("#divBiodataWali *").prop("disabled", false);
     }
 
-    //setValueBiodataWali();
+    setValueBiodataWali();
 });
 
 $(function () {

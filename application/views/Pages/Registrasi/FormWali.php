@@ -166,7 +166,7 @@
             <label for="ckAlamatWali">  <small>checklist jika <em>sama dengan alamat calon santri</em></small>
             </label>
         </div>
-        <textarea class="form-control" rows="2" placeholder="alamat wali" id="inputAlamatWali" name="inputAlamatWali"></textarea>
+        <textarea type="text" class="form-control" rows="2" placeholder="alamat wali" id="inputAlamatWali" name="inputAlamatWali"></textarea>
         </div>
     </div>
 </div>

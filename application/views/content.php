@@ -3,10 +3,10 @@
         include "home.php"; 
     }
     elseif ($_GET['modul']=='masterBiaya'){
-        include "Master/MasterBiaya.php"; 
+        include "Pages/Master/MasterBiaya.php"; 
     }
     elseif ($_GET['modul']=='masterBiayaDetail'){
-        include "Master/MasterBiayaDetail.php"; 
+        include "Pages/Master/MasterBiayaDetail.php"; 
     }
     elseif ($_GET['modul']=='mahasiswa'){
         include "mahasiswa.php"; 
