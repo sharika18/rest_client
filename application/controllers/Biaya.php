@@ -13,21 +13,33 @@ class Biaya extends CI_Controller{
   public function GetBiaya()
   {
     $get_apiManageBiaya = json_decode($this -> curl -> simple_get ($this->API.'/biaya/', array('AR-KEY'=>$this->key)),true);
-    $data['biaya'] = $get_apiManageBiaya['data'];
+    $data['biaya'] = null;
+    if($get_apiManageBiaya)
+    {
+      $data['biaya'] = $get_apiManageBiaya['data'];
+    }
     return $data['biaya'];
   }
 
   public function GetBiayaById($Biaya_ID = '')
   {
     $get_apiManageBiaya = json_decode($this -> curl -> simple_get ($this->API.'/biaya/', array('AR-KEY'=>$this->key, 'id'=>$Biaya_ID) ),true);
-    $data['biayaById'] = $get_apiManageBiaya['data'];
+    $data['biayaById'] = null;
+    if($get_apiManageBiaya)
+    {
+      $data['biayaById'] = $get_apiManageBiaya['data'];
+    }
     return $data['biayaById'];
   }
 
   function GetBiayaDetail()
   {
     $get_apiManageBiayaDetail = json_decode($this -> curl -> simple_get ($this->API.'/vw_biaya_detail/', array('AR-KEY'=>$this->key)),true);
-    $data['biayaDetail'] = $get_apiManageBiayaDetail['data'];
+    $data['biayaDetail'] = null;
+    if($get_apiManageBiayaDetail)
+    {
+      $data['biayaDetail'] = $get_apiManageBiayaDetail['data'];
+    }
     return $data['biayaDetail'];
   }
 

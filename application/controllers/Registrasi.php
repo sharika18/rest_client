@@ -2,12 +2,40 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Registrasi extends CI_Controller {
+	
+	//public $fileBuktiPembayaran = '';
 	public function __construct()
 	{
 		include "construct.php";
 	}
 	
-	function RegistrasiGetBiayaDetail($jenjang='', $status='')
+	public function UploadBiayaPendaftaran()
+    {
+        $this->load->view('Pages/Registrasi/CobaUpload', array('error' => ' ' ));
+    }
+
+	public function Upload($filePath='') 
+    {
+        $config['upload_path'] = $this->uploadPath.$filePath;
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = 2000;
+		$new_name = time()."TEST RENAME";
+		$config['file_name'] = $new_name;
+ 
+        $this->load->library('upload', $config);
+ 
+        if (!$this->upload->do_upload('cobaUpload')) 
+        {
+            $this->session->set_flashdata('error',$this->upload->display_errors());
+        } 
+        else 
+        {
+            $this->session->set_flashdata('success','File Berhasil DiUpload');
+        }
+		redirect('Registrasi/UploadBiayaPendaftaran');
+    }
+
+	function FormulirRegistrasi($jenjang='', $status='')
 	{
 		$status = '1';
 		$Api_GetBiayaDetailByJenjang = json_decode($this -> curl -> simple_get ($this->API.'/vw_biaya_detail/', array('AR-KEY'=>$this->key, 'jenjang'=>$jenjang, 'status'=>$status) ),true);
@@ -20,8 +48,29 @@ class Registrasi extends CI_Controller {
 		$this->load->view('Pages/Registrasi/Registrasi', $data);
 	}
 
-	function TambahRegistrasi()
+	function TambahRegistrasi($fileFolder='')
 	{ 
+		$fileBuktiPembayaran = $_FILES['fileBuktiPembayaran'];
+		$namaLengkap = $this->input-> post('inputNamaLengkapSantri');
+		$config['upload_path'] = $this->uploadPath.$fileFolder;
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = 2000;
+		$new_name = time()."Pendaftaran".$namaLengkap;
+		$config['file_name'] = $new_name;
+ 
+        $this->load->library('upload', $config);
+ 
+        if (!$this->upload->do_upload('fileBuktiPembayaran')) 
+        {
+            //$this->session->set_flashdata('error',$this->upload->display_errors());
+			$fileBuktiPembayaran ='Gagal Upload';
+        } 
+        else 
+        {
+            //$this->session->set_flashdata('success','File Berhasil DiUpload');
+			$fileBuktiPembayaran = $this->upload->data('file_name');
+        }
+
 		$data = [
 			'Biaya_Detail_ID' 	=> $this->input-> post('Biaya_Detail_ID'),
 			'DeskripsiBiaya' 	=> $this->input-> post('DeskripsiBiaya'),
@@ -67,6 +116,7 @@ class Registrasi extends CI_Controller {
 			'WaliHP' 			=> $this->input-> post('inputNomorHPWali'),
 			'WaliAlamat' 		=> $this->input-> post('inputAlamatWali'),
 			'Status' 			=> "",
+			'Bukti_Pembayaran'	=> $fileBuktiPembayaran,
 			'AR-KEY'        	=> $this->key,
 		];
 		$insert = $this->curl->simple_post($this->API.'/registrasi/', $data, array(CURLOPT_BUFFERSIZE => 10)); 
@@ -77,7 +127,8 @@ class Registrasi extends CI_Controller {
 		{
 			$this->session->set_flashdata('error',$this->error.' Disimpan');
 		}
-		redirect('media?modul=home');
+		//redirect('Pages/Registrasi/UploadSuccess');
+		$this->load->view('Pages/Registrasi/UploadSuccess', $data);
 	}
 
 	function EditRegistrasi()

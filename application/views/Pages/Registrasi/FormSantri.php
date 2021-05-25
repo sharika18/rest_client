@@ -17,6 +17,27 @@
 </div>
 <div class="row">  
     <div class="col-sm-6">
+        <div class="form-group">
+            <label>Jenis Kelamin*</label>
+            <div class="form-group clearfix">
+                <div class="row">
+                <div class="col-sm-6">
+                    <div class="icheck-success d-inline">
+                    <input type="radio" id="radioLakilaki" name="radioJenisKelaminSantri" value="L" checked>
+                    <label for="radioLakilaki">Laki-laki </label>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="icheck-success d-inline">
+                    <input type="radio" id="radioPerempuan" value="P" name="radioJenisKelaminSantri" required>
+                    <label for="radioPerempuan">Perempuan</label>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
         <!-- text input -->
         <div class="form-group">
         <label>Tempat Lahir*</label>
@@ -24,7 +45,7 @@
             class="form-control" placeholder="tempat lahir calon santri" required>
         </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-3">
         <div class="form-group">
         <label>Tanggal Lahir :</label>
         <div class="input-group date" data-target-input="nearest">
@@ -47,23 +68,9 @@
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-        <label>Jenis Kelamin*</label>
-        <div class="form-group clearfix">
-            <div class="row">
-            <div class="col-sm-6">
-                <div class="icheck-primary d-inline">
-                <input type="radio" id="radioLakilaki" name="radioJenisKelaminSantri" value="L" checked>
-                <label for="radioLakilaki">Laki-laki </label>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="icheck-primary d-inline">
-                <input type="radio" id="radioPerempuan" value="P" name="radioJenisKelaminSantri" required>
-                <label for="radioPerempuan">Perempuan</label>
-                </div>
-            </div>
-            </div>
-        </div>
+        <label>Asal Sekolah</label>
+        <input type="text" id="inputAsalSekolah" name="inputAsalSekolah" 
+            class="form-control" placeholder="asal sekolah calon santri">
         </div>
     </div>
 </div>
@@ -90,7 +97,7 @@
                 <input type="number" id="inputDariBerapaSaudara" name="inputDariBerapaSaudara"
                     class="form-control" placeholder="berapa" required>
                 <div class="input-group-append">
-                <span class="input-group-text">Bersaudara</span>
+                <span class="input-group-text">Saudara</span>
                 </div>
             </div>
         </div>
@@ -129,16 +136,7 @@
         </div>
     </div>
 </div>
-<div class="row">  
-    <div class="col-sm-6">
-        <div class="form-group">
-        <label>Asal Sekolah</label>
-        <input type="text" id="inputAsalSekolah" name="inputAsalSekolah" 
-            class="form-control" placeholder="asal sekolah calon santri">
-        </div>
-    </div>
-    </div>
-    <div class="row">
+<div class="row">
     <div class="col-sm-12">
         <div class="form-group">
         <label>Ukuran Seragam</label>

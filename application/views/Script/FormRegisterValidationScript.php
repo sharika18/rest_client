@@ -37,6 +37,9 @@ $(function () {
         },
         messages: {
             //SANTRI
+            fileBuktiPembayaran: {
+                required: "Bukti Pembayaran Tidak Boleh Kosong"
+            },
             inputNamaLengkapSantri: {
                 required: "Nama Lengkap Tidak Boleh Kosong"
             },

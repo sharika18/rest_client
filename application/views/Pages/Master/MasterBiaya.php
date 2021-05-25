@@ -93,6 +93,8 @@
                   </thead>
                   <tbody>
                     <?php 
+                    if($biayaIsNotNull)
+                    {
                       $rowNumber = 0;
                       $ct = count($biaya);
                       for ($i=0; $i< count($biaya); $i++)
@@ -121,6 +123,7 @@
                       </tr>
                     <?php
                       }
+                    }
                     ?>
                   </tbody>
                 </table>

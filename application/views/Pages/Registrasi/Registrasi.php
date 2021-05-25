@@ -1,5 +1,6 @@
 <?php
     include dirname(__DIR__)."/../Values/ListofValue.php"; 
+    include dirname(__DIR__)."/../Values/ListOfFolder.php"; 
     include dirname(__DIR__)."/../Values/ValueRegister.php"; 
     include dirname(__DIR__)."/../Library/head_library.php";
 ?>
@@ -15,7 +16,7 @@
 
 <div class="wrapper">
   <!-- Content Header (Page header) -->
-  <section class="content-header" style="text-align: center;  background-color: #007bff; color: #ffffff;">
+  <!-- <section class="content-header" style="text-align: center;  background-color: #007bff; color: #ffffff;">
     <div class="container-fluid">
       <div class="row mb-2" >
         <div class="col-sm-12">
@@ -30,23 +31,33 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- ./content Header (Page header) -->
 
   <!-- Main content -->
   <section class="content">
-    <div class="container-fluid">
+    <div class="container-fluid" style="max-width: 80%;">
       <br>
       <div class="row">
         <div class="col-md-12">
-          <div class="card card-default">
-            <div class="card-header">
-              <h3 class="card-title" style="font-size:15px">
-              <b>Formulir akan diproses jika sudah melakukan pembayaran uang pendaftaran sebesar Rp <?=$nominalPendaftaran;?>,-</b> 
+          <div class="callout callout-warning">
+            <h5><i class="fas fa-info"></i> Note:</h5>
+            <b>Formulir akan diproses jika sudah melakukan pembayaran uang pendaftaran sebesar Rp <?=$nominalPendaftaran;?>,-</b> 
                 ke rekening Pesantren Modern Ar Risalah Bank BNI Syariah An. Yayasan Pesantren Modern Ar Risalah Lubuklinggau No. Rek 1511111169.
-                <br>
+                <hr>
                 <?=$summary?>
                 Info Lebih Lanjut Hubungi Panitia PSB di 0812-7875-8019.
+          </div>
+
+          <div class="card card-success">
+            <div class="card-header">
+              <h3 class="card-title">
+                Formulir Pendaftaran <b><?=$this->uri->segment(3)?></b>
+                Pesantren Modern Ar-Risalah Lubuklinggau - Tahun Pelajaran 
+                <?php
+                  echo date("Y") ."/";
+                  echo date("Y")+1 . "<br>";
+                ?>
               </h3>
             </div>
             <div class="card-body p-0">
@@ -82,7 +93,8 @@
                   </div>
                 </div>
                 <div class="bs-stepper-content">
-                <form action="<?php echo base_url()?>registrasi/<?php echo $act?>" method="post" id="formSubmit">
+                <!-- <form action="<?php echo base_url()?>registrasi/<?php echo $act?>" method="post" id="formSubmit"> -->
+                <?php echo form_open_multipart('Registrasi/'.$act.'/'.$buktiPembayaran, 'id="formSubmit"');?>
                   <div id="biodata-santri" class="content" role="tabpanel" aria-labelledby="biodata-santri-trigger">                    
                       <div class="card-body">
                         <div class="row">
@@ -91,11 +103,8 @@
                               <label for="exampleInputFile">Bukti Pembayaran(File berbentuk Gambar/Photo/PDF)</label>
                               <div class="input-group">
                                 <div class="custom-file">
-                                  <input type="file" class="custom-file-input" id="exampleInputFile">
-                                  <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                </div>
-                                <div class="input-group-append">
-                                  <span class="input-group-text">Upload</span>
+                                  <input type="file" class="custom-file-input" id="fileBuktiPembayaran" name="fileBuktiPembayaran" required> 
+                                  <label class="custom-file-label" for="fileBuktiPembayaran">Choose file</label>
                                 </div>
                               </div>
                             </div>
@@ -105,7 +114,7 @@
                           include "FormSantri.php";
                         ?>
                       </div>
-                      <button class="btnNext btn btn-primary float-right" id="btnSubmitSantri" >Next</button>
+                      <button class="btnNext btn btn-success float-right" id="btnSubmitSantri" >Next</button>
                     <br>
                   </div>
 
@@ -115,8 +124,8 @@
                           include "FormAyah.php";
                         ?>
                     </div>
-                    <button class="btnNext btn btn-primary float-right" id="btnSubmitSantri" >Next</button>
-                    <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
+                    <button class="btnNext btn btn-success float-right" id="btnSubmitSantri" >Next</button>
+                    <button class="btn btn-success" onclick="stepper.previous()">Previous</button>
                   </div>
 
                   <div id="biodata-ibu" class="content" role="tabpanel" aria-labelledby="biodata-ibu-trigger">
@@ -125,8 +134,8 @@
                           include "FormIbu.php";
                         ?>
                     </div>
-                    <button class="btnNext btn btn-primary float-right">Next</button>
-                    <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
+                    <button class="btnNext btn btn-success float-right">Next</button>
+                    <button class="btn btn-success" onclick="stepper.previous()">Previous</button>
                   </div>
 
                   <div id="biodata-wali" class="content" role="tabpanel" aria-labelledby="biodata-wali-trigger">
@@ -135,12 +144,13 @@
                           include "FormWali.php";
                         ?>
                     </div>
-                    <button type="submit" class="btnSubmit btn btn-primary float-right" data-toggle="modal">
+                    <button type="submit" class="btnSubmit btn btn-success float-right" data-toggle="modal">
                       <?php echo $_GET['act'] ?>
                     </button>
-                    <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
+                    <button class="btn btn-success" onclick="stepper.previous()">Previous</button>
                   </div>
-                </form>
+                <!-- </form> -->
+                <?php form_close();?>
                 </div>
               </div>
             </div>

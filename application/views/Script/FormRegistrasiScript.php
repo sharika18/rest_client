@@ -95,7 +95,7 @@ $("input[name='ckBiodataWali']").change(function(){
 $(function () {
     var selectedDateTanggalLahirSantri=document.getElementById("dateTanggalSantri").value;  
     $('#dateTanggalSantri').datetimepicker({
-        format: 'YYYY-MM-DD',
+        format: 'DD MMMM YYYY',
         date : selectedDateTanggalLahirSantri
     });
 

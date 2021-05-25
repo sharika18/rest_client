@@ -186,6 +186,8 @@
                   </thead>
                   <tbody>
                     <?php 
+                    if($biayaDetailIsNotNull)
+                    {
                       $rowNumber = 0;
                       for ($i=0; $i< count($biayaDetail); $i++)
                       { 
@@ -213,6 +215,7 @@
                       </tr>
                     <?php
                       }
+                    }
                     ?>
                   </tbody>
                 </table>

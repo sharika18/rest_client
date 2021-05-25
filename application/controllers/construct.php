@@ -7,4 +7,8 @@
     $this->load->helper('form');
     $this->load->helper('url');
     date_default_timezone_set('Asia/Jakarta');
-    //$this->load->library('../controllers');
+    $this->uploadPath = "./assets/uploads/";
+
+    //ALERT MESSAGE
+    $this->success = "Data Berhasil";
+    $this->error = "Data Berhasil";

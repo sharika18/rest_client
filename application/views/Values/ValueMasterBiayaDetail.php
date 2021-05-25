@@ -21,6 +21,12 @@
     $deleteHrefParam = "?modul=".$_GET['modul']."&act=HapusBiayaDetail";
     $idDataTable ="#dgMasterBiayaDetail";
 
+    $biayaDetailIsNotNull = false;
+    if($biayaDetail)
+    {
+        $biayaDetailIsNotNull = true;
+    } 
+
     IF(($_GET['act']=='Edit'))
     {
         $Id   = $editBiayaDetail[0]['Biaya_Detail_ID'];
