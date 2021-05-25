@@ -7,7 +7,7 @@
                 var actValue = act.toLowerCase();
                 var message = "";
                     message +=
-                        "<p>Apakah kamu yakin ingin " +actValue+ " data tersebut?</p>";
+                        "<p><?php echo $alertBoxSubmitMessage ?></p>";
 
                 $("#modalSubmitContent").empty();
                 $("#modalSubmitContent").append(message);

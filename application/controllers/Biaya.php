@@ -74,10 +74,10 @@ class Biaya extends CI_Controller{
     $insert = $this->curl->simple_post($this->API.'/biaya/', $data, array(CURLOPT_BUFFERSIZE => 10)); 
     if($insert)
     {
-        $this->session->set_flashdata('success',$this->success.' Disimpan');
+        $this->session->set_flashdata('success',$this->successPost);
     }else
     {
-        $this->session->set_flashdata('error',$this->error.' Disimpan');
+        $this->session->set_flashdata('error',$this->errorPost);
     }
     redirect('biaya?modul=masterBiaya&act=Tambah');
   }
@@ -97,10 +97,10 @@ class Biaya extends CI_Controller{
     $update = $this->curl->simple_put($this->API.'/biaya/', $data, array(CURLOPT_BUFFERSIZE => 10)); 
     if($update)
     {
-        $this->session->set_flashdata('success',$this->success.' Diubah');
+        $this->session->set_flashdata('success',$this->successPut);
     }else
     {
-        $this->session->set_flashdata('error',$this->error.' Diubah');
+        $this->session->set_flashdata('error',$this->errorPut);
     }
     redirect('biaya?modul=masterBiaya&act=Tambah');
   }
@@ -113,10 +113,10 @@ class Biaya extends CI_Controller{
         
       if($delete)
       {
-          $this->session->set_flashdata('success',$this->success.' Dihapus');
+          $this->session->set_flashdata('success',$this->successDelete);
       }else
       {
-          $this->session->set_flashdata('error',$this->error.' Dihapus');
+          $this->session->set_flashdata('error',$this->errorDelete);
       }
       redirect('biaya?modul=masterBiaya&act=Tambah');
   }

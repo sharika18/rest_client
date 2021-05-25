@@ -48,24 +48,25 @@
               <!-- form start -->
               <form action="<?php echo base_url()?>biaya/<?php echo $act?>" method="post" id="formSubmit">
                 <div class="card-body">
-                
-                <input type="hidden" class="form-control" id="txtID" name="txtID" value="<?=$Id?>"/>
-                <input type="hidden" class="form-control" id="txtID" name="CreatedBy" value="<?=$CreatedBy?>"/>
-                <input type="hidden" class="form-control" id="txtID" name="CreatedDate" value="<?=$CreatedDate?>"/>
-                <p class="error"><?php echo $this->session->flashdata('GagalDeleteBiaya');?></p>
-                  <div class="form-group">
-                    <label>Nama Biaya</label>
-                    <input type="text" class="form-control" id="txtDeskripsi" name="txtDeskripsi" placeholder="Nama Biaya"
-                      value="<?=$deskripsi?>"/>
-                  </div>
-
+                  <input type="hidden" class="form-control" id="txtID" name="txtID" value="<?=$Id?>"/>
+                  <input type="hidden" class="form-control" id="txtID" name="CreatedBy" value="<?=$CreatedBy?>"/>
+                  <input type="hidden" class="form-control" id="txtID" name="CreatedDate" value="<?=$CreatedDate?>"/>
+                  <p class="error"><?php echo $this->session->flashdata('GagalDeleteBiaya');?></p>
+                    <div class="form-group">
+                      <label>Nama Biaya</label>
+                      <input type="text" class="form-control" id="txtDeskripsi" name="txtDeskripsi" placeholder="Nama Biaya"
+                        value="<?=$deskripsi?>"/>
+                    </div>
                 </div>
                 <!-- /.card-body -->
 
-                </form>
+              </form>
                 <div class="card-footer">
                   <button type="submit" class="btnSubmit btn btn-primary float-right" data-toggle="modal">
-                      <?php echo $_GET['act'] ?>
+                      <?php 
+                      $alertBoxSubmitMessage = "Apakah kamu yakin ingin menambahkan data berikut?";
+                      echo $_GET['act'] 
+                      ?>
                   </button>
                 </div>
             </div>

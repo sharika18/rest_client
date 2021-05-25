@@ -20,7 +20,7 @@
         $biayaIsNotNull = true;
     }   
 
-    IF(($_GET['act']=='Edit'))
+    IF(($_GET['act']=='Edit') && $editBiaya)
     {
         $Id   = $editBiaya[0]['Biaya_ID'];
         $deskripsi  = $editBiaya[0]['Deskripsi'];

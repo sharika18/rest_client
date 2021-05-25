@@ -23,8 +23,12 @@ class BiayaDetail extends Biaya
 
   function GetID($Biaya_Detail_ID = '')
   {
-    $get_apiEditBiayaDetail = json_decode($this -> curl -> simple_get ($this->API.'/vw_biaya_detail/', array('AR-KEY'=>$this->key, 'id'=>$Biaya_Detail_ID) ),true);
-    $data['editBiayaDetail'] = $get_apiEditBiayaDetail['data'];
+    $get_apiEditBiayaDetail = json_decode($this -> curl -> simple_get ($this->API.'/VwBiayaDetail/', array('AR-KEY'=>$this->key, 'id'=>$Biaya_Detail_ID) ),true);
+    $data['editBiayaDetail'] = null;
+    if($get_apiEditBiayaDetail)
+    {
+      $data['bieditBiayaDetailaya'] = $get_apiEditBiayaDetail['data'];
+    }
     $data['biaya'] = $this->GetBiaya();
     $data['biayaDetail'] = $this->GetBiayaDetail();
     $this->load->view('media', $data);

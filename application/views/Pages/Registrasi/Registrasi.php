@@ -15,25 +15,6 @@
 <body class="hold-transition sidebar-mini">
 
 <div class="wrapper">
-  <!-- Content Header (Page header) -->
-  <!-- <section class="content-header" style="text-align: center;  background-color: #007bff; color: #ffffff;">
-    <div class="container-fluid">
-      <div class="row mb-2" >
-        <div class="col-sm-12">
-          <h4>
-            Formulir Pendaftaran Santri Baru <p> 
-            Pesantren Modern Ar-Risalah Lubuklinggau Tahun Pelajaran 
-            <?php
-              echo date("Y") ."/";
-              echo date("Y")+1 . "<br>";
-            ?>
-          </h4>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <!-- ./content Header (Page header) -->
-
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid" style="max-width: 80%;">
@@ -94,7 +75,11 @@
                 </div>
                 <div class="bs-stepper-content">
                 <!-- <form action="<?php echo base_url()?>registrasi/<?php echo $act?>" method="post" id="formSubmit"> -->
-                <?php echo form_open_multipart('Registrasi/'.$act.'/'.$buktiPembayaran, 'id="formSubmit"');?>
+                <?php echo form_open_multipart('Registrasi/'.$act, 'id="formSubmit"');?>
+
+                  <input type="hidden" class="form-control" id="txtJenjang" name="txtJenjang" value="<?=$this->uri->segment(3)?>"/>
+                  <input type="hidden" class="form-control" id="txtDeskripsiBiaya" name="txtDeskripsiBiaya" value="Uang Pendaftaran - <?=$this->uri->segment(3)?>"/>
+                  
                   <div id="biodata-santri" class="content" role="tabpanel" aria-labelledby="biodata-santri-trigger">                    
                       <div class="card-body">
                         <div class="row">
@@ -145,7 +130,10 @@
                         ?>
                     </div>
                     <button type="submit" class="btnSubmit btn btn-success float-right" data-toggle="modal">
-                      <?php echo $_GET['act'] ?>
+                      <?php 
+                        $alertBoxSubmitMessage = "Apakah data formulir tersebut sudah benar?";
+                        echo $_GET['act'] 
+                      ?>
                     </button>
                     <button class="btn btn-success" onclick="stepper.previous()">Previous</button>
                   </div>

@@ -27,7 +27,7 @@
         $biayaDetailIsNotNull = true;
     } 
 
-    IF(($_GET['act']=='Edit'))
+    IF(($_GET['act']=='Edit') && $editBiayaDetail)
     {
         $Id   = $editBiayaDetail[0]['Biaya_Detail_ID'];
         $biaya_id  = $editBiayaDetail[0]['Biaya_ID'];

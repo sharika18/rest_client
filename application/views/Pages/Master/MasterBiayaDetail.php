@@ -158,7 +158,9 @@
               </form>
               <div class="card-footer">
                 <button type="submit" class="btnSubmit btn btn-primary float-right" data-toggle="modal">
-                      <?php echo $_GET['act'] ?>
+                      <?php
+                      $alertBoxSubmitMessage = "Apakah kamu yakin ingin menambahkan data berikut?"; 
+                      echo $_GET['act'] ?>
                 </button>
               </div>
             </div>
@@ -186,8 +188,8 @@
                   </thead>
                   <tbody>
                     <?php 
-                    if($biayaDetailIsNotNull)
-                    {
+                    // if($biayaDetailIsNotNull)
+                    // {
                       $rowNumber = 0;
                       for ($i=0; $i< count($biayaDetail); $i++)
                       { 
@@ -215,7 +217,7 @@
                       </tr>
                     <?php
                       }
-                    }
+                    //}
                     ?>
                   </tbody>
                 </table>
