@@ -1,6 +1,6 @@
 <?php
     parent::__construct();
-    $this->API  ="http://www.devrestapi.arrisalahlubuklinggau.com/";
+    $this->API  ="http://localhost/ArrisalahWebApp/rest_ci2/";//"http://www.devrestapi.arrisalahlubuklinggau.com/";
     $this->key  = "arrisalah123"; # variable key
     $this->load->library('session');
     $this->load->library('curl');
@@ -21,5 +21,8 @@
     
     //PATH
     $this->uploadPath = "./assets/uploads/";
+    $this->paymentSlipsDir = "./assets/PaymentSlips/";
     $this->folderBuktiPembayaran = 'BuktiPembayaran';
     $this->folderUangpangkal = 'folder2';
+
+    //SMTP
