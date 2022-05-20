@@ -8,6 +8,10 @@ class Biaya extends CI_Controller{
   public function __construct()
   {
     include "construct.php";
+    if(!$this->session->userdata('loggedIn'))
+    {
+      redirect('Welcome'); 
+    }
   }
   
   public function GetBiaya()
@@ -34,7 +38,7 @@ class Biaya extends CI_Controller{
 
   function GetBiayaDetail()
   {
-    $get_apiManageBiayaDetail = json_decode($this -> curl -> simple_get ($this->API.'/vw_biaya_detail/', array('AR-KEY'=>$this->key)),true);
+    $get_apiManageBiayaDetail = json_decode($this -> curl -> simple_get ($this->API.'/vwbiayadetail/', array('AR-KEY'=>$this->key)),true);
     $data['biayaDetail'] = null;
     if($get_apiManageBiayaDetail)
     {
@@ -47,6 +51,7 @@ class Biaya extends CI_Controller{
   {
     $data['biaya'] = $this->GetBiaya();
     $data['biayaDetail'] = $this->GetBiayaDetail();
+    //print_r($data);
     $this->load->view('media', $data);
   }
   
@@ -69,6 +74,7 @@ class Biaya extends CI_Controller{
         'CreatedDate'   => $now,
         'ModifiedBy'    => $this->input-> post ('ModifiedBy'), //belum diset
         'ModifiedDate'  => $now,
+        'Periode'       => date('Ym'),
         'AR-KEY'        => $this->key,
     ];
     $insert = $this->curl->simple_post($this->API.'/biaya/', $data, array(CURLOPT_BUFFERSIZE => 10)); 

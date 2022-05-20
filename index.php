@@ -66,6 +66,7 @@
 switch (ENVIRONMENT)
 {
 	case 'development':
+		ini_set('memory_limit','512M');
 		error_reporting(-1);
 		ini_set('display_errors', 1);
 	break;

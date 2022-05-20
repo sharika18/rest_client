@@ -62,7 +62,7 @@ $autoload['packages'] = array();
 //$autoload['libraries'] = array('database');
 
 # Load the template library when the spark is loaded
-$autoload['libraries'] = array('curl');
+$autoload['libraries'] = array('curl', 'email', 'session');
 
 /*
 | -------------------------------------------------------------------
@@ -94,7 +94,7 @@ $autoload['drivers'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 //derrian
-$autoload['helper'] = array('url');
+$autoload['helper'] = array('url', 'form');
 
 /*
 | -------------------------------------------------------------------

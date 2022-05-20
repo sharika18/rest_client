@@ -63,3 +63,7 @@
 <script src="<?php echo base_url();?>assets/AdminLTE/plugins/jquery-validation/additional-methods.min.js"></script>
 <!-- bs-custom-file-input -->
 <script src="<?php echo base_url();?>assets/AdminLTE/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+
+<!-- 
+<script src="<?php echo base_url();?>assets/AdminLTE/dist/js/pages/dashboardAdmin.js"></script>
+OPTIONAL SCRIPTS -->

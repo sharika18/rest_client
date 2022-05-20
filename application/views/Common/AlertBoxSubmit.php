@@ -21,7 +21,7 @@
     <div class="modal-dialog">
         <div class="modal-content bg-default">
             <div class="modal-header">
-                <h4 class="modal-title"><?php echo $_GET['act'] ?> Data Biaya</h4>
+                <h4 class="modal-title"><?php echo $_GET['act'] ?> Data</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>

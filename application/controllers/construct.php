@@ -1,6 +1,6 @@
 <?php
     parent::__construct();
-    $this->API  ="http://localhost/ArrisalahWebApp/rest_ci2/";//"http://www.devrestapi.arrisalahlubuklinggau.com/";
+    $this->API  = "http://api.arrisalahlubuklinggau.com/"; //"http://localhost/ArrisalahWebApp/rest_ci2/"
     $this->key  = "arrisalah123"; # variable key
     $this->load->library('session');
     $this->load->library('curl');
@@ -19,9 +19,11 @@
     $this->successDelete = "Data Berhasil Dihapus";
     $this->errorDelete = "Data Tidak Berhasil Dihapus";
     
+    $this->successImport = "Data Berhasil Diimport ";
     //PATH
     $this->uploadPath = "./assets/uploads/";
     $this->paymentSlipsDir = "./assets/PaymentSlips/";
+    $this->tmpPaymentExcelDir = "./assets/tmpPaymentExcel/";
     $this->folderBuktiPembayaran = 'BuktiPembayaran';
     $this->folderUangpangkal = 'folder2';
 
