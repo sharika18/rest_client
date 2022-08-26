@@ -1,6 +1,6 @@
 <?php
     parent::__construct();
-    $this->API  = "http://api.arrisalahlubuklinggau.com/"; //"http://localhost/ArrisalahWebApp/rest_ci2/"
+    $this->API  = "http://localhost/ArrisalahWebApp/rest_ci2/"; //"http://api.arrisalahlubuklinggau.com/";
     $this->key  = "arrisalah123"; # variable key
     $this->load->library('session');
     $this->load->library('curl');

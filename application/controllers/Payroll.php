@@ -62,7 +62,7 @@ class Payroll extends PayrollSlip{
    
     //$data['periode']      = $this->getFinancePeriode();
     //print_r($data);
-    $this->load->view('media', $data);
+    //$this->load->view('media', $data);
   }
 
   function deletePayrollByPeriode($periode)

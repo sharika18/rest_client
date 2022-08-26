@@ -86,7 +86,7 @@
                 <div class="card-body">
                   <p class="error"><?php echo $this->session->flashdata('GagalDeleteBiaya');?></p>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
+                    <label for="exampleInputEmail1">Payment Period</label>
                     <select class="custom-select" id="selectPeriode" name="selectPeriode" required>
                         <option value="">-- Pilih Periode --</option>
                       <?php 
@@ -364,12 +364,18 @@
                           }else{
                             $hidden = '';
                           }
+
+                          if($payroll[$i]['isSent'] == 1){
+                            $isSent = 'text-success';    
+                          }else{
+                            $isSent = '';
+                          }
                       ?>
                         
                         <tr>
                           <td></td>
                           <td class="tdPeriode"><?=$payroll[$i]['Periode'];?></td>
-                          <td class="tdNIP"><?=$payroll[$i]['NIP'];?></td>
+                          <td class="tdNIP <?=$isSent?>"><?=$payroll[$i]['NIP'];?></td>
                           <td class="tdDeskripsi"><?=$payroll[$i]['Nama'];?></td>
                           <td>
                             <?=$payroll[$i]['Email'];?>

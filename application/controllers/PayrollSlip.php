@@ -25,6 +25,17 @@ class PayrollSlip extends Email {
         return $data['detailKaryawan'];
     }
 
+    public function getVwKaryawanDetailByID($ID = '')
+    {
+        $getVwKaryawanDetailByID_get = json_decode($this -> curl -> simple_get ($this->API.'/Karyawan/getVwKaryawanDetailByID/', array('AR-KEY'=>$this->key, 'ID'=>$ID) ),true);
+        $data['detailKaryawan'] = null;
+        if($getVwKaryawanDetailByID_get)
+        {
+        $data['detailKaryawan'] = $getVwKaryawanDetailByID_get['data'];
+        }
+        return $data['detailKaryawan'];
+    }
+
     public function getAllFinanceByPeriode($periode = '')
     {
         $getAllFinanceByPeriode_get = json_decode($this -> curl -> simple_get ($this->API.'/Payroll/getAllFinanceByPeriode/', array('AR-KEY'=>$this->key, 'periode'=>$periode) ),true);
@@ -45,6 +56,30 @@ class PayrollSlip extends Email {
         $data['financeDataByPeriodeNIP'] = $getAllFinanceByPeriodeNIP_get['data'];
         }
         return $data['financeDataByPeriodeNIP'];
+    }
+
+    function EditKaryawanIsSent($NIP = "", $Periode = "", $isSent)
+    {
+        $now = date('Y-m-d H:i:s');
+        $data = array(
+            'AR-KEY'          => $this->key,
+            'NIP'             => $NIP,
+            'Periode'         => $Periode,
+            'isSent'          => $isSent,
+            // 'ModifiedBy'      => $this->session->userdata('loggedIn')['userName'],
+            // 'ModifiedDate'    => $now
+        );
+        $update = $this->curl->simple_put($this->API.'/Payroll/updatePayrollByNIPPeriode/', $data, array(CURLOPT_BUFFERSIZE => 10)); 
+        if($update)
+        {
+            $this->session->set_flashdata('success',$this->successPut);
+        }else
+        {
+            $this->session->set_flashdata('error',$this->errorPut);
+            echo $NIP;
+        }
+        print_r($data);
+        
     }
 
     public function extractExcel($fileName = "")
@@ -85,7 +120,10 @@ class PayrollSlip extends Email {
                         $Nama       = $sheetData[$i][2];
                         
                         $dataDetail = $this->getVwKaryawanDetailByNIP($NIP);
-                
+                        if(!isset($dataDetail[0]['NIP']))
+                        {
+                            continue;
+                        }
                         //print_r($data);
                         $Email          = "";
                         $jabatanTugas   = "";
@@ -451,31 +489,6 @@ class PayrollSlip extends Email {
                 //IDENTITAS KARYAWAN
                     $pdf->SetFont('Arial','',10);
 
-                    /*$pdf->Cell(45,6,'No Transaksi',0,0, 'L');
-                    $pdf->Cell(5,6,':',0,0, 'C');
-                    $pdf->Cell(40,6,$row['noTransaksi'],0,0, 'R');
-                    $pdf->Cell(2,6,'',0,0,'C');
-                    $pdf->Cell(45,6,'Nama Karyawan',0,0, 'L');
-                    $pdf->Cell(5,6,':',0,0, 'C');
-                    $pdf->Cell(40,6,$row['Nama'],0,1, 'R');
-
-                    $pdf->Cell(45,6,'Periode',0,0, 'L');
-                    $pdf->Cell(5,6,':',0,0, 'C');
-                    $pdf->Cell(40,6,$periode,0,0, 'R');
-                    $pdf->Cell(2,6,'',0,0,'C');
-                    $pdf->Cell(45,6,'Jabatan/Tugas',0,0, 'L');
-                    $pdf->Cell(5,6,':',0,0, 'C');
-                    $pdf->Cell(40,6,$row['jabatanTugas'],0,1, 'R');
-
-                    $pdf->Cell(92,6,'',0,0,'C');
-                    $pdf->Cell(45,6,'Unit',0,0, 'L');
-                    $pdf->Cell(5,6,':',0,0, 'C');
-                    $pdf->Cell(40,6,$row['Unit'],0,1, 'R');
-
-                    $pdf->Cell(92,6,'',0,0,'C');
-                    $pdf->Cell(45,6,'Status Karyawan',0,0, 'L');
-                    $pdf->Cell(5,6,':',0,0, 'C');
-                    $pdf->Cell(40,6,$row['statusKepegawaian'],0,1, 'R');*/
                     $pdf->Cell(45,6,'Nama Karyawan',0,0, 'L');
                     $pdf->Cell(5,6,':',0,0, 'C');
                     $pdf->Cell(132,6,$row['Nama'],0,1, 'L');
@@ -759,8 +772,9 @@ class PayrollSlip extends Email {
                     <br><br>Note:<br>Untuk informasi lebih lanjut silahkan hubungi kepala sekolah/kepala unit masing-masing
                     <br><br>
                     Demikian disampaikan dan terima kasih.";
-
+                    //echo $row['Email'];
                     $this->sendMail($row['Email'], $dir, $subject, $message);
+                    $this->EditKaryawanIsSent($row['NIP'], $row['Periode'], 1);
                     unlink($dir);
             }
         }
@@ -779,8 +793,9 @@ class PayrollSlip extends Email {
     public function sendPayrollSlipPerEmployee($periode, $NIP)
     {
         $data = $this->getAllFinanceByPeriodeNIP($periode, $NIP);
+        //print_r($data);
         $this->payrollSlipCreatePDF($data);
-        redirect('Payroll?modul=financePayroll&act=Tambah');
+        //redirect('Payroll?modul=financePayroll&act=Tambah');
     }
     
     public function templatePDF()

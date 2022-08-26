@@ -5,6 +5,7 @@
     $dataFinanceDisplay ="true";
     $previewIsNotNull = false;
     $hidden = "";
+    $isSent = "";
     $newFileName = "";
     if(isset($fileName))
     {
