@@ -43,22 +43,25 @@
             }
         ]
     });
-
-    $("#dgMasterKaryawan").DataTable({
-      "destroy": true,
-      "responsive": true,
-      "autoWidth": false,
-      "paging": true,
-      "columnDefs": [
-            {
-                "targets": [ 0],
-                "visible": false,
-                "searchable": false
-            }
-        ]
-    });
   });
 
+  $('#formSubmit').validate({
+        rules: {
+        },
+        messages: {
+        },
+        errorElement: 'span',
+        errorPlacement: function (error, element) {
+          error.addClass('invalid-feedback');
+          element.closest('.form-group').append(error);
+        },
+        highlight: function (element, errorClass, validClass) {
+          $(element).addClass('is-invalid');
+        },
+        unhighlight: function (element, errorClass, validClass) {
+          $(element).removeClass('is-invalid');
+        }
+      });
   //Date picker
 
   $(function () {

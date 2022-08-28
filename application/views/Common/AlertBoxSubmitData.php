@@ -1,19 +1,23 @@
 <script>
-    $(function () {
-        $(".btnSubmit").click(function () {
-            if ($("#formSubmit" ).valid()) {
-                $("#modalSubmit").modal();
-                var deskripsi = $('.inputDeskripsi').val();
-                var message = "";
-                    message +=
-                        "<p><?php echo $alertBoxSubmitMessage ?></p>";
-                    message += "<b>"+deskripsi+"</b>";
+    function setModalSubmitAlert(formID, inputDeskripsi)
+    {
+        if ($(formID).valid()) {
+            $("#modalSubmit").modal();
+            var deskripsi = $(inputDeskripsi).val();
+            var message = "";
+                message +=
+                    "<p><?php echo $alertBoxSubmitMessage ?></p>";
+                message += "<b>"+deskripsi+"</b>";
 
-                $("#modalSubmitContent").empty();
-                $("#modalSubmitContent").append(message);
-            }
-        });
-    });
+            $("#modalSubmitContent").empty();
+            $("#modalSubmitContent").append(message);
+        }
+    }
+    // $(function () {
+    //     $(".btnSubmit").click(function () {
+    //         //setModalSubmitAlert("#formSubmit", '.inputDeskripsi');
+    //     });
+    // });
 </script>
 
 
@@ -42,8 +46,8 @@
     </div>
 </div>
 
-<script>
+<!-- <script>
 function submitForm() {
   document.getElementById("formSubmit").submit();
 }
-</script>
+</script> -->

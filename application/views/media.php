@@ -177,6 +177,12 @@
                         <p>Karyawan</p>
                       </a>
                     </li>
+                    <li class="nav-item">
+                      <a href="<?php echo base_url()?>Karyawan?modul=masterUtilities&act=Tambah" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Utilities</p>
+                      </a>
+                    </li>
                     <!--
                     <li class="nav-item">
                       <a href="<?php echo base_url()?>biaya?modul=masterBiaya&act=Tambah" class="nav-link">

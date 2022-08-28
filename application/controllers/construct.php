@@ -27,4 +27,9 @@
     $this->folderBuktiPembayaran = 'BuktiPembayaran';
     $this->folderUangpangkal = 'folder2';
 
+    $this->emptyData = array(
+        'status'=> "",
+        'query'=> "",
+        'data' => array()
+      );
     //SMTP

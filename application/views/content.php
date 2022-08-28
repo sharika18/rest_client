@@ -5,6 +5,9 @@
     elseif ($_GET['modul']=='masterKaryawan'){
         include "Pages/Master/MasterKaryawan.php"; 
     }
+    elseif ($_GET['modul']=='masterUtilities'){
+        include "Pages/Master/MasterUtilities.php"; 
+    }
     elseif ($_GET['modul']=='masterBiaya'){
         include "Pages/Master/MasterBiaya.php"; 
     }

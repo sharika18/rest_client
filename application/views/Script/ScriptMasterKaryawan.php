@@ -8,59 +8,97 @@
             format: 'YYYY-MM-DD',
             date : selectedDate
         });
-        
+        var selectedDateTanggalLahirKaryawan=document.getElementById("dateTanggalLahirKaryawan").value;  
+        $('#dateTanggalLahirKaryawan').datetimepicker({
+            format: 'YYYY-MM-DD',
+            date : selectedDateTanggalLahirKaryawan
+        });
         resetFormBehavior();
 
         //VARIABLES
             //FORM
-            var inputID             = '';  
-            var inputNIP            = '';            
-            var dateTMT             = "";         
-            var inputNamaLengkap    = "";   
-            var emailEmail          = "";      
-            var selectPendidikan    = "";      
-            var selectJabatanTugas  = "";  
-            var selectUnit          = "";  
-            var selectStatus        = "";        
+            var inputID                         = '';
+            var inputKaryawanJabatan             = '';
+            var inputKaryawanJabatan2            = '';  
+            var inputNIP                        = '';            
+            var dateTMT                         = "";         
+            var inputNamaLengkap                = "";   
+            var emailEmail                      = ""; 
+            var radioJenisKelaminKaryawan       = "";   
+            var inputTempatLahirKaryawan        = "";      
+            var dateTanggalLahirKaryawan        = "";
+            var selectStatusMukim               = "";    
+            var selectStatus                    = "";       
+            var selectPendidikan                = "";      
+            var selectJabatanTugas              = "";  
+            var selectUnit                      = "";
+            var selectJabatanTugas2             = "";  
+            var selectUnit2                     = "";       
 
             function setFormValue()
             {
                 $("#inputID").val(inputID);
+                $("#inputKaryawanJabatan").val(inputKaryawanJabatan);
+                $("#inputKaryawanJabatan2").val(inputKaryawanJabatan2);
                 $("#inputNIP").val(inputNIP);
                 $("#dateTMT").val(dateTMT);
                 $("#inputNamaLengkap").val(inputNamaLengkap);
                 $("#emailEmail").val(emailEmail);
+                $('input:radio[name="radioJenisKelaminKaryawan"][value="'+radioJenisKelaminKaryawan+'"]').prop('checked', true);
+                $("#inputTempatLahirKaryawan").val(inputTempatLahirKaryawan);
+                $("#dateTanggalLahirKaryawan").val(dateTanggalLahirKaryawan);
+                $("#selectStatusMukim").val(selectStatusMukim);
+                $("#selectStatus").val(selectStatus);
                 $("#selectPendidikan").val(selectPendidikan);
                 $("#selectJabatanTugas").val(selectJabatanTugas);
                 $("#selectUnit").val(selectUnit);
-                $("#selectStatus").val(selectStatus);
+                $("#selectJabatanTugas2").val(selectJabatanTugas2);
+                $("#selectUnit2").val(selectUnit2);
             }
 
             function setDataValue()
             {
-                inputID             = $('#inputID').val();   
-                inputNIP            = $('#inputNIP').val();          
-                dateTMT             = $('#dateTMT').val();         
-                inputNamaLengkap    = $('#inputNamaLengkap').val();   
-                emailEmail          = $('#emailEmail').val();      
-                selectPendidikan    = $('#selectPendidikan').val();      
-                selectJabatanTugas  = $('#selectJabatanTugas').val();  
-                selectUnit          = $('#selectUnit').val();  
-                selectStatus        = $('#selectStatus').val();
+                inputID                     =	$("#inputID").val();
+                inputKaryawanJabatan         =	$("#inputKaryawanJabatan").val();
+                inputKaryawanJabatan2        =	$("#inputKaryawanJabatan2").val();
+                inputNIP                    =	$("#inputNIP").val();
+                dateTMT                     =	$("#dateTMT").val();
+                inputNamaLengkap            =	$("#inputNamaLengkap").val();
+                emailEmail                  =	$("#emailEmail").val();
+                radioJenisKelaminKaryawan 	=   $('input[name="radioJenisKelaminKaryawan"]:checked').val();
+                inputTempatLahirKaryawan    =	$("#inputTempatLahirKaryawan").val();
+                dateTanggalLahirKaryawan    =	$("#dateTanggalLahirKaryawan").val();
+                selectStatusMukim           =	$("#selectStatusMukim").val();
+                selectStatus                =	$("#selectStatus").val();
+                selectPendidikan            =	$("#selectPendidikan").val();
+                selectJabatanTugas          =	$("#selectJabatanTugas").val();
+                selectUnit                  =	$("#selectUnit").val();
+                selectJabatanTugas2         =	$("#selectJabatanTugas2").val();
+                selectUnit2                 =	$("#selectUnit2").val();
+
             }
         
         //RESET FUNCTION
             function resetFormValue()
             {
                 $("#inputID").val("");
+                $("#inputKaryawanJabatan").val("");
+                $("#inputKaryawanJabatan2").val("");
                 $("#inputNIP").val("");
                 $("#dateTMT").val("");
                 $("#inputNamaLengkap").val("");
                 $("#emailEmail").val("");
+                $('input[name="radioJenisKelaminKaryawan"]:checked').val("L");
+                $("#inputTempatLahirKaryawan").val("");
+                $("#dateTanggalLahirKaryawan").val("");
+                $("#selectStatusMukim").val("");
+                $("#selectStatus").val("");
                 $("#selectPendidikan").val("");
                 $("#selectJabatanTugas").val("");
                 $("#selectUnit").val("");
-                $("#selectStatus").val("");
+                $("#selectJabatanTugas2").val("");
+                $("#selectUnit2").val("");
+
             }
 
             function resetFormBehavior()
@@ -76,17 +114,36 @@
             var table = $("#dgMasterKaryawan").DataTable({
                 ajax: '<?php echo base_url('Karyawan/getVwKaryawanDetail/')?>',
                 "destroy": true,
+                responsive: {
+                    details: {
+                    type: 'column'
+                    }
+                },
+                columnDefs: [{
+                    className: 'control',
+                    orderable: false,
+                    targets: 0
+                }],
                 columns: 
                 [
+                    {data:'firstColumn'},
                     { data: 'NIP' },
                     { 
                         data: 'NamaLengkap',
                         className: "tdDeskripsi" 
                     },
+                    { data: 'TanggalMulaiTugas' },
+                    { data: 'jenisKelamin' },
+                    { data: 'tempatLahir' },
+                    { data: 'tanggalLahir' },
                     { data: 'Email' },
+                    { data: 'Pendidikan' },
+                    { data: 'status' },
                     { data: 'jabatanTugas' },
                     { data: 'unit' },
-                    { data: 'status' },
+                    { data: 'jabatanTugas2' },
+                    { data: 'unit2' },
+                    { data: 'DetailMukim' },
                     {
                         data: "karyawanID" , 
                         render : function ( data, type, row, meta ) 
@@ -114,7 +171,7 @@
                 
                 $.ajax({
                     type  : 'ajax',
-                    url   : '<?php echo base_url('Karyawan/getAllPendidikan')?>',
+                    url   : '<?php echo base_url('Karyawan/getAllPendidikan/dataOption')?>',
                     async : true,
                     dataType : 'json',
                     success : function(data)
@@ -145,7 +202,7 @@
                 
                 $.ajax({
                     type  : 'ajax',
-                    url   : '<?php echo base_url('Karyawan/getAllJabatanTugas')?>',
+                    url   : '<?php echo base_url('Karyawan/getAllJabatanTugas/dataOption')?>',
                     async : true,
                     dataType : 'json',
                     success : function(data)
@@ -165,6 +222,7 @@
                             html += '<option value="'+data[i].jabatanTugasID+'">'+data[i].jabatanTugas+'</option>';
                         }
                         $('#selectJabatanTugas').html(html);
+                        $('#selectJabatanTugas2').html(html);
                     },
                     error:function(data){
                     }
@@ -176,7 +234,7 @@
                 
                 $.ajax({
                     type  : 'ajax',
-                    url   : '<?php echo base_url('Karyawan/getAllUnit')?>',
+                    url   : '<?php echo base_url('Karyawan/getAllUnit/dataOption')?>',
                     async : true,
                     dataType : 'json',
                     success : function(data)
@@ -196,6 +254,7 @@
                             html += '<option value="'+data[i].unitID+'">'+data[i].unit+'</option>';
                         }
                         $('#selectUnit').html(html);
+                        $('#selectUnit2').html(html);
                     },
                     error:function(data){
                     }
@@ -207,7 +266,7 @@
                 
                 $.ajax({
                     type  : 'ajax',
-                    url   : '<?php echo base_url('Karyawan/getAllStatusKaryawan')?>',
+                    url   : '<?php echo base_url('Karyawan/getAllStatusKaryawan/dataOption')?>',
                     async : true,
                     dataType : 'json',
                     success : function(data)
@@ -247,15 +306,24 @@
                         var i;
                         for(i=0; i<data.length; i++)
                         {
-                                inputID             = data[i].karyawanID;
-                                inputNIP            = data[i].NIP;            
-                                dateTMT             = data[i].TanggalMulaiTugas;         
-                                inputNamaLengkap    = data[i].NamaLengkap;   
-                                emailEmail          = data[i].Email;      
-                                selectPendidikan    = data[i].pendidikanID;      
-                                selectJabatanTugas  = data[i].jabatanTugasID;  
-                                selectUnit          = data[i].unitID;  
-                                selectStatus        = data[i].statusID; 
+                                inputID                     =   data[i].karyawanID;
+                                inputKaryawanJabatan        =   data[i].karyawanJabatanID1;
+                                inputKaryawanJabatan2       =   data[i].karyawanJabatanID2;
+                                inputNIP                    =   data[i].NIP;            
+                                dateTMT                     =   data[i].TanggalMulaiTugas;         
+                                inputNamaLengkap            =   data[i].NamaLengkap;   
+                                emailEmail                  =   data[i].Email; 
+                                radioJenisKelaminKaryawan 	=   data[i].jenisKelamin;
+                                inputTempatLahirKaryawan    =   data[i].tempatLahir;
+                                dateTanggalLahirKaryawan    =   data[i].tanggalLahir;
+                                selectStatusMukim           =   data[i].statusMukim;
+                                selectStatus                =   data[i].statusID;
+                                selectPendidikan            =   data[i].pendidikanID; 
+                                selectJabatanTugas          =   data[i].jabatanTugasID;  
+                                selectUnit                  =   data[i].unitID;  
+                                selectJabatanTugas2         =   data[i].jabatanTugasID2;
+                                selectUnit2                 =   data[i].unitID2;  
+                                 
 
                                 setFormValue();
                         }
@@ -283,7 +351,13 @@
             $('#dgMasterKaryawan').on('click', '.item-delete', function () 
             {
                 var data = table.row($(this).parents('tr')).data();   
-                $("#inputID").val(data['karyawanID']);  
+                $("#inputID").val(data['NIP']);  
+
+                var dataDeskripsi =  $(this).parents("tr").find(".tdDeskripsi").text();
+                var message =   "<p><?php echo $deleteAlertMessage ?><b>"
+                                + dataDeskripsi+"</b> ? </p>";
+                $("#modalContent").empty();
+                $("#modalContent").append(message);
             });
 
         //CRUD ACTION
@@ -291,21 +365,29 @@
             function saveData()
             {
                 setDataValue(); 
-
                 $.ajax({
                         type : "POST",
                         url  : "<?php echo base_url('Karyawan/TambahKaryawan')?>",
                         //dataType : "JSON",
                         data : 
-                        {
-                            inputNIP            : inputNIP,          
-                            dateTMT             : dateTMT,        
-                            inputNamaLengkap    : inputNamaLengkap,   
-                            emailEmail          : emailEmail,        
-                            selectPendidikan    : selectPendidikan,      
-                            selectJabatanTugas  : selectJabatanTugas,  
-                            selectUnit          : selectUnit,        
-                            selectStatus        : selectStatus 
+                        {   
+                            inputID                     :   inputID,                   
+                            inputKaryawanJabatan        :   inputKaryawanJabatan,       
+                            inputKaryawanJabatan2       :   inputKaryawanJabatan2,      
+                            inputNIP                    :   inputNIP,                  
+                            dateTMT                     :   dateTMT,                         
+                            inputNamaLengkap            :   inputNamaLengkap,         
+                            emailEmail                  :   emailEmail,                
+                            radioJenisKelaminKaryawan 	:   radioJenisKelaminKaryawan, 
+                            inputTempatLahirKaryawan    :   inputTempatLahirKaryawan,  
+                            dateTanggalLahirKaryawan    :   dateTanggalLahirKaryawan,  
+                            selectStatusMukim           :   selectStatusMukim,         
+                            selectStatus                :   selectStatus,              
+                            selectPendidikan            :   selectPendidikan,         
+                            selectJabatanTugas          :   selectJabatanTugas,        
+                            selectUnit                  :   selectUnit,                
+                            selectJabatanTugas2         :   selectJabatanTugas2,       
+                            selectUnit2                 :   selectUnit2 
                         },
                         success: function(data)
                         {
@@ -340,15 +422,23 @@
                         //dataType : "JSON",
                         data : 
                         {
-                            inputID             : inputID,
-                            inputNIP            : inputNIP,          
-                            dateTMT             : dateTMT,        
-                            inputNamaLengkap    : inputNamaLengkap,   
-                            emailEmail          : emailEmail,        
-                            selectPendidikan    : selectPendidikan,      
-                            selectJabatanTugas  : selectJabatanTugas,  
-                            selectUnit          : selectUnit,        
-                            selectStatus        : selectStatus 
+                            inputID                     :   inputID,                   
+                            inputKaryawanJabatan        :   inputKaryawanJabatan,       
+                            inputKaryawanJabatan2       :   inputKaryawanJabatan2,      
+                            inputNIP                    :   inputNIP,                  
+                            dateTMT                     :   dateTMT,                         
+                            inputNamaLengkap            :   inputNamaLengkap,         
+                            emailEmail                  :   emailEmail,                
+                            radioJenisKelaminKaryawan 	:   radioJenisKelaminKaryawan, 
+                            inputTempatLahirKaryawan    :   inputTempatLahirKaryawan,  
+                            dateTanggalLahirKaryawan    :   dateTanggalLahirKaryawan,  
+                            selectStatusMukim           :   selectStatusMukim,         
+                            selectStatus                :   selectStatus,              
+                            selectPendidikan            :   selectPendidikan,         
+                            selectJabatanTugas          :   selectJabatanTugas,        
+                            selectUnit                  :   selectUnit,                
+                            selectJabatanTugas2         :   selectJabatanTugas2,       
+                            selectUnit2                 :   selectUnit2  
                         },
                         success: function(data)
                         {
@@ -429,6 +519,10 @@
                 resetFormValue();
                 resetFormBehavior();
             });
+
+            $(".btnSubmit").click(function () {
+                setModalSubmitAlert("#formSubmit", '.inputDeskripsi');
+            })
     
     });
 </script>
